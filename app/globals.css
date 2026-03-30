@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  
+  --font-title: var(--font-playfair);
+  --font-primary: var(--font-urbanist);
+  --font-secondary: var(--font-poppins);
+  --font-sans: var(--font-urbanist);
+}
+
+/* @theme {
+  
+  --font-title: var(--font-dm-serif);
+  --font-primary: var(--font-urbanist);
+  --font-secondary: var(--font-poppins);
+  --font-sans: var(--font-urbanist);
+} */
+
+:root {
+  --color-primary: #0077B6;
+  --color-primary-dark: #03045E;
+  --color-primary-light: #0096C7;
+  --color-accent: #00B4D8;
+  --color-accent-light: #48CAE4;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-playfair), serif !important;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Colors */
+.text-primary { color: #0077B6; }
+.bg-primary { background-color: #0077B6; }
+.border-primary { border-color: #0077B6; }
+
+/* Custom Font Utility Classes */
+
+.font-title {
+  font-family: var(--font-title), serif;
+}
+
+.font-primary {
+  font-family: var(--font-primary), sans-serif;
+}
+
+.font-secondary {
+  font-family: var(--font-secondary), sans-serif;
+}
