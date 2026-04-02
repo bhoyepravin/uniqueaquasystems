@@ -8,7 +8,7 @@ const divisions = [
   {
     slug: "chemical",
     title: "Chemical Water Treatment Division",
-    description: "UNI-TREAT® series of specialty chemicals for cooling water, boiler water, descaling, RO treatment, fire side systems and sugar process applications.",
+    description: "UNI-TREAT® series of specialty chemicals for cooling water, boiler water, descaling, RO treatment, fire side Chemicals, Defoamers, Polyelectrolytes and sugar process applications.",
     icon: FlaskConical,
     color: "#0077B6",
     count: "7 Product Categories",
@@ -29,6 +29,7 @@ const divisions = [
     color: "#00B4D8",
     count: "3 Product Categories",
   },
+  
 ];
 
 export default function ProductsPage() {

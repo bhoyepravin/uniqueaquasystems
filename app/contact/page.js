@@ -53,7 +53,7 @@ export default function ContactPage() {
                   <div>
                     <div className="font-bold text-gray-900 mb-1">Business Hours</div>
                     <div className="text-gray-600 text-sm">Monday – Saturday: 9:00 AM – 6:00 PM</div>
-                    <div className="text-gray-500 text-xs">Sunday: Closed</div>
+                    <div className="text-gray-500 text-xs">Saturday: Closed</div>
                   </div>
                 </div>
               </div>
@@ -62,7 +62,7 @@ export default function ContactPage() {
           {/* Contact Form */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-6">Send Us a Message</h2>
-            <form className="space-y-4" action="mailto:amitrudre@gmail.com" method="GET">
+            <form className="space-y-4" action="mailto:sales.unique2010@gmail.com" method="GET">
               <div className="grid sm:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">First Name *</label>

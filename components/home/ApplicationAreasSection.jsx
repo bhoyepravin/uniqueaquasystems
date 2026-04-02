@@ -15,8 +15,8 @@ export default function ApplicationAreasSection() {
   
   // Stats for the section
   const stats = [
-    { value: "20+", label: "Industries Served", icon: Building2 },
-    { value: "1000+", label: "Projects Completed", icon: TrendingUp },
+    { value: "200+", label: "Industries Served", icon: Building2 },
+    { value: "5000+", label: "Projects Completed", icon: TrendingUp },
     { value: "99%", label: "Client Satisfaction", icon: Sparkles },
     { value: "24/7", label: "Technical Support", icon: Shield },
   ];

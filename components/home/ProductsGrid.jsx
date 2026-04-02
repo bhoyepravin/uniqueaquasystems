@@ -16,10 +16,14 @@ const divisionColors = {
   spares: "#3B82F6",
 };
 
+// Featured products including the new ones
 const featured = [
-  { product: chemicalProducts[0], division: "chemical" },
-  { product: chemicalProducts[2], division: "chemical" },
-  { product: chemicalProducts[4], division: "chemical" },
+  { product: chemicalProducts[0], division: "chemical" },  // Cooling Towers Open Loop
+  { product: chemicalProducts[2], division: "chemical" },  // Boiler Water Treatment
+  { product: chemicalProducts[4], division: "chemical" },  // RO Chemicals
+  { product: chemicalProducts[5], division: "chemical" },  // Defoamers (NEW)
+  { product: chemicalProducts[6], division: "chemical" },  // ETP Chemicals (NEW)
+  { product: chemicalProducts[7], division: "chemical" },  // Fire Side Chemicals
   { product: mechanicalProducts[1], division: "mechanical" },
   { product: mechanicalProducts[3], division: "mechanical" },
   { product: sparesProducts[0], division: "spares" },

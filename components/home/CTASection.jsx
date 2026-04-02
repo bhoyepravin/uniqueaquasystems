@@ -177,12 +177,12 @@ export default function CTASection() {
             >
               <div className="flex items-center gap-1">
                 <Shield size={12} className="text-white/50" />
-                <span className="text-white/50 text-xs">20+ Years Experience</span>
+                <span className="text-white/50 text-xs">25+ Years Experience</span>
               </div>
               <div className="w-1 h-1 rounded-full bg-white/30" />
               <div className="flex items-center gap-1">
                 <CheckCircle size={12} className="text-white/50" />
-                <span className="text-white/50 text-xs">500+ Happy Clients</span>
+                <span className="text-white/50 text-xs">1000+ Happy Clients</span>
               </div>
               <div className="w-1 h-1 rounded-full bg-white/30" />
               <div className="flex items-center gap-1">

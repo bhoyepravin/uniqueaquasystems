@@ -40,7 +40,7 @@
 
 // const companyInfo = {
 //   phone: "+91-253-6699936",
-//   email: "amitrudre@gmail.com",
+//   email: "sales.unique2010@gmail.com",
 // };
 
 // const divisionIcons = { FlaskConical, Settings, Wrench };
@@ -619,7 +619,7 @@
 
 // const companyInfo = {
 //   phone: "+91-253-6699936",
-//   email: "amitrudre@gmail.com",
+//   email: "sales.unique2010@gmail.com",
 // };
 
 // const divisionIcons = { FlaskConical, Settings, Wrench };
@@ -1224,6 +1224,1217 @@
 //   );
 // }
 
+// "use client";
+// import Link from "next/link";
+// import { useState, useEffect, useRef } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import Image from "next/image";
+// import {
+//   Menu, X, Phone, ChevronDown, Mail, ArrowRight,
+//   FlaskConical, Settings, Wrench, Droplets, Wind, Flame,
+//   Pill, Factory, Coffee, Shirt, Zap, Building2, Home,
+// } from "lucide-react";
+// import { navItems } from "@/lib/data";
+// import { unique_aqua_logo } from "@/public";
+
+// // ─── Enhanced Brand color palette ────────────────────────────
+// const COLORS = {
+//   primary: "#1E3A8A",
+//   secondary: "#06B6D4",
+//   accent: "#67E8F9",
+//   dark: "#0F2B6D",
+//   light: "#CFFAFE",
+//   white: "#FFFFFF",
+//   gray50: "#F8FAFC",
+//   gray100: "#F1F5F9",
+//   gray200: "#E2E8F0",
+//   gray300: "#CBD5E1",
+//   gray600: "#475569",
+//   gray700: "#334155",
+//   gray800: "#1E293B",
+// };
+
+// const GRADIENTS = {
+//   light: "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 100%)",
+//   cta: "linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)",
+//   ctaHover: "linear-gradient(135deg, #0891B2 0%, #2563EB 100%)",
+//   megaFooter: "linear-gradient(90deg, #1E3A8A 0%, #06B6D4 100%)",
+//   // Darker navbar gradient for better separation from hero
+//   navbarTransparent: "linear-gradient(135deg, rgba(15,35,80,0.85) 0%, rgba(6,120,140,0.8) 100%)",
+// };
+
+// const companyInfo = {
+//   phone: "+91-0253-2941322",
+//   email: "sales.unique2010@gmail.com",
+// };
+
+// export default function Navbar() {
+//   const [mobileOpen, setMobileOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [activeDropdown, setActiveDropdown] = useState(null);
+//   const [mobileExpanded, setMobileExpanded] = useState(null);
+//   const [isMounted, setIsMounted] = useState(false);
+//   const closeTimeout = useRef(null);
+
+//   useEffect(() => {
+//     setIsMounted(true);
+    
+//     const onScroll = () => {
+//       setScrolled(window.scrollY > 20);
+//     };
+    
+//     onScroll();
+//     window.addEventListener("scroll", onScroll);
+//     return () => window.removeEventListener("scroll", onScroll);
+//   }, []);
+
+//   const handleMouseEnter = (key) => {
+//     clearTimeout(closeTimeout.current);
+//     setActiveDropdown(key);
+//   };
+  
+//   const handleMouseLeave = () => {
+//     closeTimeout.current = setTimeout(() => setActiveDropdown(null), 150);
+//   };
+
+//   const itemHover = {
+//     onMouseEnter: (e) => { 
+//       e.currentTarget.style.background = COLORS.gray100; 
+//       e.currentTarget.style.color = COLORS.primary; 
+//     },
+//     onMouseLeave: (e) => { 
+//       e.currentTarget.style.background = ""; 
+//       e.currentTarget.style.color = COLORS.gray700; 
+//     },
+//   };
+
+//   const navLinkStyle = (extra = "") =>
+//     `${extra} px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200`;
+
+//   const getNavTextColor = (scrolled) => {
+//     if (!isMounted) return COLORS.white;
+//     return scrolled ? COLORS.gray700 : COLORS.white;
+//   };
+
+//   const getNavBackground = () => {
+//   if (!isMounted) return "rgba(15,35,80,0.7)";
+  
+//   return scrolled 
+//     ? "#ffffff" 
+//     : "rgba(15,35,80,0.55)"; // transparent dark overlay
+// };
+
+//   // const getNavBackground = () => {
+//   //   if (!isMounted) return GRADIENTS.navbarTransparent;
+//   //   // Use solid white when scrolled for better readability
+//   //   return scrolled ? COLORS.white : GRADIENTS.navbarTransparent;
+//   // };
+
+//   const getTopBarBackground = () => {
+//     if (!isMounted) return "rgba(89, 146, 198, 1)";
+//     return scrolled ? "rgba(255,255,255,0.95)" : "rgba(89, 146, 198, 1)";
+//   };
+
+//   const getTopBarTextColor = () => {
+//     if (!isMounted) return COLORS.white;
+//     return scrolled ? COLORS.gray600 : COLORS.white;
+//   };
+
+//   const getBorderBottom = () => {
+//     if (!isMounted) return "1px solid rgba(255,255,255,0.2)";
+//     return scrolled ? `1px solid ${COLORS.gray200}` : "1px solid rgba(255,255,255,0.2)";
+//   };
+
+//   return (
+//     <header
+//       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+//       style={{ 
+//         boxShadow: isMounted && scrolled ? `0 8px 30px -8px rgba(0,0,0,0.12), 0 4px 12px -6px rgba(0,0,0,0.05)` : "none",
+//       }}
+//     >
+//       {/* ── Top info bar ─────────────────────────────────────── */}
+//       <div
+//         className="hidden md:block transition-all duration-300"
+//         style={{
+//           background: getTopBarBackground(),
+//           backdropFilter: "blur(12px)",
+//           borderBottom: "none",
+//         }}
+//       >
+//         <div className="max-w-7xl mx-auto px-4 py-1.5 flex justify-between items-center text-xs">
+//           <div className="flex items-center gap-1.5 font-medium tracking-wide" style={{ color: getTopBarTextColor() }}>
+//             <Droplets size={12} style={{ color: COLORS.accent }} />
+//             <span>Unique Aqua Systems — Total Water Management Since 2002</span>
+//           </div>
+
+//           <div className="flex items-center gap-5">
+//             <a
+//               href={`tel:${companyInfo.phone}`}
+//               className="flex items-center gap-1.5 font-medium transition-all duration-200"
+//               style={{ color: getTopBarTextColor() }}
+//               onMouseEnter={e => e.currentTarget.style.color = COLORS.accent}
+//               onMouseLeave={e => e.currentTarget.style.color = getTopBarTextColor()}
+//             >
+//               <Phone size={11} style={{ color: COLORS.accent }} /> {companyInfo.phone}
+//             </a>
+//             <span style={{ color: scrolled ? COLORS.gray300 : "rgba(255,255,255,0.3)" }}>|</span>
+//             <a
+//               href={`mailto:${companyInfo.email}`}
+//               className="flex items-center gap-1.5 font-medium transition-all duration-200"
+//               style={{ color: getTopBarTextColor() }}
+//               onMouseEnter={e => e.currentTarget.style.color = COLORS.accent}
+//               onMouseLeave={e => e.currentTarget.style.color = getTopBarTextColor()}
+//             >
+//               <Mail size={11} style={{ color: COLORS.accent }} /> {companyInfo.email}
+//             </a>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* ── Main nav with premium glassmorphism ─────────────────────── */}
+//       <nav
+//   className="transition-all duration-300"
+//   style={{
+//     background: getNavBackground(),
+//     backdropFilter: scrolled ? "none" : "blur(20px)", // strong blur initially
+//     WebkitBackdropFilter: scrolled ? "none" : "blur(18px)", // safari support
+//     borderBottom: getBorderBottom(),
+//   }}
+// >
+//       {/* <nav
+//         className="transition-all duration-300"
+//         style={{
+//           background: getNavBackground(),
+//           backdropFilter: scrolled ? "none" : "blur(16px)",
+//           borderBottom: getBorderBottom(),
+//         }}
+//       > */}
+//         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
+//           <Link href="/" className="flex items-center transition-all duration-300 hover:opacity-90">
+//             <Image
+//               src={unique_aqua_logo}
+//               alt="Unique Aqua Logo"
+//               width={130}
+//               height={36}
+//               className="h-9 w-auto object-contain"
+//               priority
+//             />
+//           </Link>
+
+//           {/* ── Desktop links ──────────────────────────────── */}
+//           <div className="hidden lg:flex items-center gap-6">
+//   <Link
+//     href="/"
+//     className={`${navLinkStyle("text-[15px] relative group")}`}
+//     style={{ color: getNavTextColor(scrolled) }}
+//     onMouseEnter={e => {
+//       e.currentTarget.style.color = "#67E8F9";
+//     }}
+//     onMouseLeave={e => {
+//       e.currentTarget.style.color = getNavTextColor(scrolled);
+//     }}
+//   >
+//     Home
+//     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+//   </Link>
+
+//   {/* Company */}
+//   <div className="relative" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
+//     <button
+//       className={navLinkStyle("flex items-center gap-1 text-[15px] relative group")}
+//       style={{ color: getNavTextColor(scrolled) }}
+//       onMouseEnter={e => {
+//         e.currentTarget.style.color = "#67E8F9";
+//       }}
+//       onMouseLeave={e => {
+//         e.currentTarget.style.color = getNavTextColor(scrolled);
+//       }}
+//     >
+//       Company <ChevronDown size={16} />
+//       <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+//     </button>
+
+//     <AnimatePresence>
+//       {activeDropdown === "company" && (
+//         <motion.div
+//           initial={{ opacity: 0, y: 10 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           exit={{ opacity: 0, y: 10 }}
+//           transition={{ duration: 0.2 }}
+//           className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-md overflow-hidden z-50 border border-gray-100"
+//         >
+//           {navItems.company.dropdown.map((item) => (
+//             <Link
+//               key={item.href}
+//               href={item.href}
+//               className="block px-4 py-3 text-base transition-all duration-200 hover:bg-gray-100 hover:text-blue-600"
+//               style={{ color: COLORS.gray700 }}
+//             >
+//               {item.label}
+//             </Link>
+//           ))}
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   </div>
+
+//   {/* Products */}
+//   <div className="relative" onMouseEnter={() => handleMouseEnter("products")} onMouseLeave={handleMouseLeave}>
+//     <button
+//       className={navLinkStyle("flex items-center gap-1 text-[15px] relative group")}
+//       style={{ color: getNavTextColor(scrolled) }}
+//       onMouseEnter={e => {
+//         e.currentTarget.style.color = "#67E8F9";
+//       }}
+//       onMouseLeave={e => {
+//         e.currentTarget.style.color = getNavTextColor(scrolled);
+//       }}
+//     >
+//       Products <ChevronDown size={16} />
+//       <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+//     </button>
+
+//     <AnimatePresence>
+//       {activeDropdown === "products" && (
+//         <motion.div
+//           initial={{ opacity: 0, y: 10 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           exit={{ opacity: 0, y: 10 }}
+//           transition={{ duration: 0.2 }}
+//           className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[750px] bg-white rounded-xl shadow-lg overflow-hidden z-50 border border-gray-100"
+//         >
+//           <div className="grid grid-cols-3 divide-x divide-gray-100">
+//             {navItems.products.megaMenu.map((division) => (
+//               <div key={division.slug} className="p-5">
+//                 <div className="flex items-center gap-2 mb-3">
+//                   <div className="w-2 h-2 rounded-full bg-blue-600" />
+//                   <Link
+//                     href={`/products/${division.slug}`}
+//                     className="text-sm font-bold uppercase tracking-wider text-blue-700 hover:underline"
+//                   >
+//                     {division.division}
+//                   </Link>
+//                 </div>
+
+//                 <div className="space-y-1">
+//                   {division.items.map((item) => (
+//                     <Link
+//                       key={item.href}
+//                       href={item.href}
+//                       className="block text-base rounded-lg px-2 py-1.5 text-gray-600 transition-all duration-200 hover:bg-gray-100 hover:text-blue-600 hover:translate-x-1"
+//                     >
+//                       {item.label}
+//                     </Link>
+//                   ))}
+//                 </div>
+//               </div>
+//             ))}
+//           </div>
+
+//           <div className="px-6 py-3 flex items-center justify-between bg-blue-600">
+//             <span className="text-sm font-medium text-white">
+//               Explore all products across 3 divisions
+//             </span>
+//             <Link
+//               href="/products"
+//               className="flex items-center gap-1 text-sm font-bold text-white group"
+//             >
+//               View All
+//               <ArrowRight size={14} className="group-hover:translate-x-1 transition" />
+//             </Link>
+//           </div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   </div>
+
+//   {/* Application Areas */}
+//   <div className="relative" onMouseEnter={() => handleMouseEnter("applications")} onMouseLeave={handleMouseLeave}>
+//     <button
+//       className={navLinkStyle("flex items-center gap-1 text-[15px] relative group")}
+//       style={{ color: getNavTextColor(scrolled) }}
+//       onMouseEnter={e => {
+//         e.currentTarget.style.color = "#67E8F9";
+//       }}
+//       onMouseLeave={e => {
+//         e.currentTarget.style.color = getNavTextColor(scrolled);
+//       }}
+//     >
+//       Application Areas <ChevronDown size={16} />
+//       <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+//     </button>
+
+//     <AnimatePresence>
+//       {activeDropdown === "applications" && (
+//         <motion.div
+//           initial={{ opacity: 0, y: 10 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           exit={{ opacity: 0, y: 10 }}
+//           transition={{ duration: 0.2 }}
+//           className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-md overflow-hidden z-50 border border-gray-100"
+//         >
+//           {navItems.applicationAreas.dropdown.map((item) => (
+//             <Link
+//               key={item.href}
+//               href={item.href}
+//               className="block px-4 py-2.5 text-base text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-blue-600"
+//             >
+//               {item.label}
+//             </Link>
+//           ))}
+
+//           <div className="border-t border-gray-200">
+//             <Link
+//               href="/application-areas"
+//               className="flex items-center gap-2 px-4 py-3 text-sm font-semibold text-blue-600 group"
+//             >
+//               View All Industries
+//               <ArrowRight size={14} className="group-hover:translate-x-1 transition" />
+//             </Link>
+//           </div>
+//         </motion.div>
+//       )}
+//     </AnimatePresence>
+//   </div>
+
+//   <Link
+//     href="/clients"
+//     className={`${navLinkStyle("text-[15px] relative group")}`}
+//     style={{ color: getNavTextColor(scrolled) }}
+//     onMouseEnter={e => (e.currentTarget.style.color = "#67E8F9")}
+//     onMouseLeave={e => (e.currentTarget.style.color = getNavTextColor(scrolled))}
+//   >
+//     Clients
+//     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+//   </Link>
+
+//   <Link
+//     href="/news-events"
+//     className={`${navLinkStyle("text-[15px] relative group")}`}
+//     style={{ color: getNavTextColor(scrolled) }}
+//     onMouseEnter={e => (e.currentTarget.style.color = "#67E8F9")}
+//     onMouseLeave={e => (e.currentTarget.style.color = getNavTextColor(scrolled))}
+//   >
+//     News & Events
+//     <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600  transition-all duration-300 group-hover:w-full"></span>
+//   </Link>
+
+//   {/* CTA Button */}
+//   <Link href="/contact">
+//   <motion.div
+//     whileHover={{ scale: 1.05 }}
+//     whileTap={{ scale: 0.98 }}
+//     className="ml-2 px-5 py-2 rounded-lg text-base font-semibold cursor-pointer text-white transition-all duration-300 shadow-sm"
+//     style={{
+//       background: "linear-gradient(135deg, #06B6D4, #3B82F6)",
+//       boxShadow: "0 8px 25px -5px rgba(6,182,212,0.4)",
+//     }}
+//   >
+//     Contact Us
+//   </motion.div>
+// </Link>
+// </div>
+
+//           {/* Mobile toggle */}
+//           <button
+//             className="lg:hidden p-2 rounded-lg transition-all duration-200 hover:bg-white/10"
+//             style={{ color: getNavTextColor(scrolled) }}
+//             onClick={() => setMobileOpen(!mobileOpen)}
+//           >
+//             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+//           </button>
+//         </div>
+
+//         {/* Mobile menu - keep existing code */}
+//         <AnimatePresence>
+//           {mobileOpen && (
+//             <motion.div
+//               initial={{ opacity: 0, height: 0 }}
+//               animate={{ opacity: 1, height: "auto" }}
+//               exit={{ opacity: 0, height: 0 }}
+//               transition={{ duration: 0.3, ease: "easeInOut" }}
+//               className="lg:hidden overflow-y-auto max-h-[80vh]"
+//               style={{ 
+//                 background: COLORS.white, 
+//                 borderTop: `1px solid ${COLORS.gray200}`,
+//                 boxShadow: "0 -4px 10px rgba(0,0,0,0.05)"
+//               }}
+//             >
+//               {/* Mobile menu content - same as your existing code */}
+//               <div className="px-4 py-4 space-y-1">
+//                 <Link href="/" onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 font-medium rounded-lg transition-all duration-200 hover:translate-x-1"
+//                   style={{ color: COLORS.gray700 }}
+//                   {...itemHover}
+//                 >
+//                   Home
+//                 </Link>
+//                 <div>
+//                   <button
+//                     className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-lg transition-all duration-200"
+//                     style={{ 
+//                       color: mobileExpanded === "company" ? COLORS.primary : COLORS.gray700,
+//                       background: mobileExpanded === "company" ? COLORS.gray100 : "transparent",
+//                     }}
+//                     onClick={() => setMobileExpanded(mobileExpanded === "company" ? null : "company")}
+//                   >
+//                     Company
+//                     <ChevronDown size={16} style={{
+//                       transition: "transform 0.2s",
+//                       transform: mobileExpanded === "company" ? "rotate(180deg)" : "rotate(0deg)",
+//                     }} />
+//                   </button>
+//                   <AnimatePresence>
+//                     {mobileExpanded === "company" && (
+//                       <motion.div
+//                         initial={{ opacity: 0, height: 0 }}
+//                         animate={{ opacity: 1, height: "auto" }}
+//                         exit={{ opacity: 0, height: 0 }}
+//                         className="pl-4 space-y-1 overflow-hidden"
+//                       >
+//                         {navItems.company.dropdown.map((item) => (
+//                           <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
+//                             className="block px-4 py-2 text-sm rounded-lg transition-all duration-200 hover:translate-x-1"
+//                             style={{ color: COLORS.gray600 }}
+//                             {...itemHover}
+//                           >
+//                             {item.label}
+//                           </Link>
+//                         ))}
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 </div>
+//                 <div>
+//                   <button
+//                     className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-lg transition-all duration-200"
+//                     style={{ 
+//                       color: mobileExpanded === "products" ? COLORS.primary : COLORS.gray700,
+//                       background: mobileExpanded === "products" ? COLORS.gray100 : "transparent",
+//                     }}
+//                     onClick={() => setMobileExpanded(mobileExpanded === "products" ? null : "products")}
+//                   >
+//                     Products
+//                     <ChevronDown size={16} style={{
+//                       transition: "transform 0.2s",
+//                       transform: mobileExpanded === "products" ? "rotate(180deg)" : "rotate(0deg)",
+//                     }} />
+//                   </button>
+//                   <AnimatePresence>
+//                     {mobileExpanded === "products" && (
+//                       <motion.div
+//                         initial={{ opacity: 0, height: 0 }}
+//                         animate={{ opacity: 1, height: "auto" }}
+//                         exit={{ opacity: 0, height: 0 }}
+//                         className="pl-4 space-y-3 overflow-hidden"
+//                       >
+//                         {navItems.products.megaMenu.map((division) => (
+//                           <div key={division.slug}>
+//                             <Link href={`/products/${division.slug}`} onClick={() => setMobileOpen(false)}
+//                               className="block text-xs font-bold px-4 py-1 uppercase tracking-wider"
+//                               style={{ color: COLORS.primary }}
+//                             >
+//                               {division.division}
+//                             </Link>
+//                             {division.items.map((item) => (
+//                               <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
+//                                 className="block px-4 py-2 text-sm rounded-lg transition-all duration-200 hover:translate-x-1"
+//                                 style={{ color: COLORS.gray600 }}
+//                                 {...itemHover}
+//                               >
+//                                 {item.label}
+//                               </Link>
+//                             ))}
+//                           </div>
+//                         ))}
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 </div>
+//                 <div>
+//                   <button
+//                     className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-lg transition-all duration-200"
+//                     style={{ 
+//                       color: mobileExpanded === "applications" ? COLORS.primary : COLORS.gray700,
+//                       background: mobileExpanded === "applications" ? COLORS.gray100 : "transparent",
+//                     }}
+//                     onClick={() => setMobileExpanded(mobileExpanded === "applications" ? null : "applications")}
+//                   >
+//                     Application Areas
+//                     <ChevronDown size={16} style={{
+//                       transition: "transform 0.2s",
+//                       transform: mobileExpanded === "applications" ? "rotate(180deg)" : "rotate(0deg)",
+//                     }} />
+//                   </button>
+//                   <AnimatePresence>
+//                     {mobileExpanded === "applications" && (
+//                       <motion.div
+//                         initial={{ opacity: 0, height: 0 }}
+//                         animate={{ opacity: 1, height: "auto" }}
+//                         exit={{ opacity: 0, height: 0 }}
+//                         className="pl-4 space-y-1 overflow-hidden"
+//                       >
+//                         {navItems.applicationAreas.dropdown.map((item) => (
+//                           <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
+//                             className="block px-4 py-2 text-sm rounded-lg transition-all duration-200 hover:translate-x-1"
+//                             style={{ color: COLORS.gray600 }}
+//                             {...itemHover}
+//                           >
+//                             {item.label}
+//                           </Link>
+//                         ))}
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 </div>
+//                 <Link href="/clients" onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 font-medium rounded-lg transition-all duration-200 hover:translate-x-1"
+//                   style={{ color: COLORS.gray700 }}
+//                   {...itemHover}
+//                 >
+//                   Clients
+//                 </Link>
+//                 <Link href="/news-events" onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 font-medium rounded-lg transition-all duration-200 hover:translate-x-1"
+//                   style={{ color: COLORS.gray700 }}
+//                   {...itemHover}
+//                 >
+//                   News &amp; Events
+//                 </Link>
+//                 <Link
+//                   href="/contact"
+//                   onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 text-center font-bold rounded-full transition-all duration-200 hover:scale-105"
+//                   style={{
+//                     background: GRADIENTS.cta,
+//                     color: COLORS.white,
+//                   }}
+//                 >
+//                   Contact Us
+//                 </Link>
+//               </div>
+//             </motion.div>
+//           )}
+//         </AnimatePresence>
+//       </nav>
+//     </header>
+//   );
+// }
+
+
+// "use client";
+// import Link from "next/link";
+// import { useState, useEffect, useRef } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import Image from "next/image";
+// import {
+//   Menu, X, Phone, ChevronDown, Mail, ArrowRight,
+//   FlaskConical, Settings, Wrench, Droplets, Wind, Flame,
+//   Pill, Factory, Coffee, Shirt, Zap, Building2, Home,
+// } from "lucide-react";
+// import { navItems } from "@/lib/data";
+// import { unique_aqua_logo } from "@/public";
+
+// // ─── Enhanced Brand color palette ────────────────────────────
+// const COLORS = {
+//   primary: "#0F2B6D",    // Deep corporate blue
+//   primaryLight: "#1E4A8A",
+//   secondary: "#06B6D4",
+//   accent: "#67E8F9",
+//   dark: "#0F2B6D",
+//   light: "#CFFAFE",
+//   white: "#FFFFFF",
+//   gray50: "#F8FAFC",
+//   gray100: "#F1F5F9",
+//   gray200: "#E2E8F0",
+//   gray300: "#CBD5E1",
+//   gray600: "#475569",
+//   gray700: "#334155",
+//   gray800: "#1E293B",
+// };
+
+// const GRADIENTS = {
+//   cta: "linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)",
+//   ctaHover: "linear-gradient(135deg, #0891B2 0%, #2563EB 100%)",
+//   megaFooter: "linear-gradient(90deg, #0F2B6D 0%, #06B6D4 100%)",
+// };
+
+// const companyInfo = {
+//   phone: "+91-0253-2941322",
+//   email: "sales.unique2010@gmail.com",
+// };
+
+// export default function Navbar() {
+//   const [mobileOpen, setMobileOpen] = useState(false);
+//   const [scrolled, setScrolled] = useState(false);
+//   const [activeDropdown, setActiveDropdown] = useState(null);
+//   const [mobileExpanded, setMobileExpanded] = useState(null);
+//   const [isMounted, setIsMounted] = useState(false);
+//   const closeTimeout = useRef(null);
+//   const navbarRef = useRef(null);  // ← ADD THIS LINE
+
+//   useEffect(() => {
+//   setIsMounted(true);
+  
+//   const onScroll = () => {
+//     setScrolled(window.scrollY > 20);
+//   };
+  
+//   onScroll();
+//   window.addEventListener("scroll", onScroll);
+  
+//   // ← ADD THIS CLICK OUTSIDE DETECTION
+//   const handleClickOutside = (event) => {
+//     if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+//       setActiveDropdown(null);
+//       setMobileOpen(false);
+//     }
+//   };
+  
+//   document.addEventListener("mousedown", handleClickOutside);
+  
+//   return () => {
+//     window.removeEventListener("scroll", onScroll);
+//     document.removeEventListener("mousedown", handleClickOutside); // ← ADD THIS
+//   };
+// }, []);
+
+//   const handleMouseEnter = (key) => {
+//     clearTimeout(closeTimeout.current);
+//     setActiveDropdown(key);
+//   };
+  
+//   const handleMouseLeave = () => {
+//      setActiveDropdown(null);  // ← Changed: closes immediately, no delay
+//   };
+
+//   const handleLinkClick = () => {
+//   // Close all dropdowns immediately when a link is clicked
+//   setActiveDropdown(null);
+//   setMobileOpen(false);
+//   setMobileExpanded(null);
+// };
+
+//   const getNavBackground = () => {
+//     if (!isMounted) return "#ffffff";
+//     return "#ffffff";
+//   };
+
+//   const getTopBarBackground = () => {
+//     if (!isMounted) return "#67E8F9";
+//     return "#67E8F9";
+//   };
+
+//   const getTopBarTextColor = () => {
+//     if (!isMounted) return COLORS.primary;
+//     return COLORS.primary;
+//   };
+
+//   const getBorderBottom = () => {
+//     if (!isMounted) return "1px solid rgba(0,0,0,0.1)";
+//     return scrolled ? `1px solid ${COLORS.gray200}` : "1px solid rgba(0,0,0,0.08)";
+//   };
+
+//   const getNavTextColor = () => {
+//     if (!isMounted) return COLORS.gray700;
+//     return COLORS.gray700;
+//   };
+
+//   return (
+//     <header
+//       ref={navbarRef}  // ← ADD THIS
+//       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+//       style={{ 
+//         boxShadow: isMounted && scrolled ? "0 4px 20px -6px rgba(0,0,0,0.12)" : "0 2px 10px -5px rgba(0,0,0,0.08)",
+//       }}
+//     >
+//       {/* ── Top info bar - visible initially, hides on scroll ────── */}
+//       <div
+//         className="hidden md:block transition-all duration-300 overflow-hidden"
+//         style={{
+//           background: getTopBarBackground(),
+//           borderBottom: "none",
+//           maxHeight: scrolled ? "0" : "40px",
+//           opacity: scrolled ? 0 : 1,
+//           paddingTop: scrolled ? "0" : "6px",
+//           paddingBottom: scrolled ? "0" : "6px",
+//         }}
+//       >
+//         <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-xs">
+//           <div className="flex items-center gap-1.5 font-medium tracking-wide" style={{ color: getTopBarTextColor() }}>
+//             <Droplets size={12} style={{ color: COLORS.primary }} />
+//             <span>Unique Aqua Systems — Total Water Management Since 2002</span>
+//           </div>
+
+//           <div className="flex items-center gap-5">
+//             <a
+//               href={`tel:${companyInfo.phone}`}
+//               className="flex items-center gap-1.5 font-medium transition-colors duration-200"
+//               style={{ color: getTopBarTextColor() }}
+//               onMouseEnter={e => e.currentTarget.style.color = COLORS.white}
+//               onMouseLeave={e => e.currentTarget.style.color = getTopBarTextColor()}
+//             >
+//               <Phone size={11} style={{ color: COLORS.primary }} /> {companyInfo.phone}
+//             </a>
+//             <span style={{ color: COLORS.primary, opacity: 0.3 }}>|</span>
+//             <a
+//               href={`mailto:${companyInfo.email}`}
+//               className="flex items-center gap-1.5 font-medium transition-colors duration-200"
+//               style={{ color: getTopBarTextColor() }}
+//               onMouseEnter={e => e.currentTarget.style.color = COLORS.white}
+//               onMouseLeave={e => e.currentTarget.style.color = getTopBarTextColor()}
+//             >
+//               <Mail size={11} style={{ color: COLORS.primary }} /> {companyInfo.email}
+//             </a>
+//           </div>
+//         </div>
+//       </div>
+
+//       {/* ── Main nav with white background ──────────────────────── */}
+//       <nav
+//         className="transition-all duration-300"
+//         style={{
+//           background: getNavBackground(),
+//           backdropFilter: "none",
+//           WebkitBackdropFilter: "none",
+//           borderBottom: getBorderBottom(),
+//         }}
+//       >
+//         <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+//           {/* Logo with increased size and crisp rendering */}
+//           <Link href="/" className="flex items-center shrink-0 transition-opacity duration-200 hover:opacity-90">
+//             <div className="relative">
+//               <Image
+//                 src={unique_aqua_logo}
+//                 alt="Unique Aqua Logo"
+//                 width={180}
+//                 height={52}
+//                 className="h-12 w-auto object-contain"
+//                 priority
+//                 style={{ 
+//                   filter: "none",
+//                   imageRendering: "crisp-edges",
+//                 }}
+//               />
+//             </div>
+//           </Link>
+
+//           {/* ── Desktop navigation ──────────────────────────────── */}
+//           <div className="hidden lg:flex items-center gap-2">
+//             {/* Home Link */}
+//             <Link
+//               href="/"
+//               onClick={handleLinkClick}  // ← ADD THIS
+//               className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+//               style={{ color: getNavTextColor() }}
+//               onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+//               onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+//             >
+//               Home
+//               <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+//             </Link>
+
+//             {/* Company Dropdown */}
+//             <div className="relative" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
+//               <button
+//                 className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+//                 style={{ color: getNavTextColor() }}
+//                 onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+//                 onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+//               >
+//                 Company <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+//                 <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+//               </button>
+
+//               <AnimatePresence>
+//                 {activeDropdown === "company" && (
+//                   <motion.div
+//                     initial={{ opacity: 0, y: 8 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     exit={{ opacity: 0, y: 8 }}
+//                     transition={{ duration: 0.2 }}
+//                     className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl overflow-hidden z-50 border border-gray-100"
+//                   >
+//                     <div className="py-2">
+//                       {navItems.company.dropdown.map((item) => (
+//                         <Link
+//                           key={item.href}
+//                           href={item.href}
+//                           onClick={handleLinkClick}
+//                           className="block px-4 py-2.5 text-sm font-medium transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
+//                           style={{ color: COLORS.gray700 }}
+//                         >
+//                           {item.label}
+//                         </Link>
+//                       ))}
+//                     </div>
+//                   </motion.div>
+//                 )}
+//               </AnimatePresence>
+//             </div>
+
+//             {/* Products Mega Menu */}
+//             <div className="relative" onMouseEnter={() => handleMouseEnter("products")} onMouseLeave={handleMouseLeave}>
+//               <button
+//                 className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+//                 style={{ color: getNavTextColor() }}
+//                 onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+//                 onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+//               >
+//                 Products <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+//                 <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+//               </button>
+
+//               <AnimatePresence>
+//   {activeDropdown === "products" && (
+//     <motion.div
+//       initial={{ opacity: 0, y: 8 }}
+//       animate={{ opacity: 1, y: 0 }}
+//       exit={{ opacity: 0, y: 8 }}
+//       transition={{ duration: 0.2 }}
+//       className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[800px] bg-white rounded-2xl shadow-2xl overflow-hidden z-50 border border-gray-100"
+//     >
+//       <div className="grid grid-cols-3 divide-x divide-gray-100">
+//         {navItems.products.megaMenu.map((division) => (
+//           <div key={division.slug} className="p-5">
+//             <div className="flex items-center gap-2 mb-3">
+//               <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+//               <Link
+//                 href={`/products/${division.slug}`}
+//                 className="text-xs font-bold uppercase tracking-wider text-blue-700 hover:text-cyan-600 transition-colors"
+//               >
+//                 {division.division}
+//               </Link>
+//             </div>
+
+//             <div className="space-y-1 max-h-[400px] overflow-y-auto custom-scrollbar">
+//               {division.items.map((item) => (
+//                 <Link
+//                   key={item.href}
+//                   href={item.href}
+//                   className="block text-sm rounded-lg px-3 py-2 text-gray-600 transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600 "
+//                 >
+//                   {item.label}
+//                 </Link>
+//               ))}
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+
+//       <div className="px-6 py-3 flex items-center justify-between bg-gradient-to-r from-blue-700 to-cyan-600">
+//         <span className="text-sm font-medium text-white">
+//           Complete water treatment solutions across 3 divisions
+//         </span>
+//         <Link
+//           href="/products"
+//           className="flex items-center gap-1 text-sm font-semibold text-white group"
+//         >
+//           View All Products
+//           <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+//         </Link>
+//       </div>
+//     </motion.div>
+//   )}
+// </AnimatePresence>
+//             </div>
+
+//             {/* Application Areas Dropdown */}
+//             <div className="relative" onMouseEnter={() => handleMouseEnter("applications")} onMouseLeave={handleMouseLeave}>
+//               <button
+//                 className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+//                 style={{ color: getNavTextColor() }}
+//                 onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+//                 onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+//               >
+//                 Application Areas <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+//                 <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+//               </button>
+
+//               <AnimatePresence>
+//                 {activeDropdown === "applications" && (
+//                   <motion.div
+//                     initial={{ opacity: 0, y: 8 }}
+//                     animate={{ opacity: 1, y: 0 }}
+//                     exit={{ opacity: 0, y: 8 }}
+//                     transition={{ duration: 0.2 }}
+//                     className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl overflow-hidden z-50 border border-gray-100"
+//                   >
+//                     <div className="py-2">
+//                       {navItems.applicationAreas.dropdown.map((item) => (
+//                         <Link
+//                           key={item.href}
+//                           href={item.href}
+//                           className="block px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
+//                         >
+//                           {item.label}
+//                         </Link>
+//                       ))}
+//                     </div>
+//                     <div className="border-t border-gray-100 bg-gray-50">
+//                       <Link
+//                         href="/application-areas"
+//                         className="flex items-center gap-2 px-4 py-3 text-sm font-semibold text-cyan-600 group"
+//                       >
+//                         View All Industries
+//                         <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+//                       </Link>
+//                     </div>
+//                   </motion.div>
+//                 )}
+//               </AnimatePresence>
+//             </div>
+
+//             {/* Clients Link */}
+//             <Link
+//               href="/clients"
+//               className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+//               style={{ color: getNavTextColor() }}
+//               onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+//               onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+//             >
+//               Clients
+//               <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+//             </Link>
+
+//             {/* News & Events Link */}
+//             <Link
+//               href="/news-events"
+//               className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+//               style={{ color: getNavTextColor() }}
+//               onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+//               onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+//             >
+//               News & Events
+//               <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+//             </Link>
+
+//             {/* CTA Button */}
+//             <Link href="/contact" className="ml-3">
+//               <motion.button
+//                 whileHover={{ scale: 1.05 }}
+//                 whileTap={{ scale: 0.98 }}
+//                 transition={{ type: "spring", stiffness: 400, damping: 17 }}
+//                 className="px-5 py-2 rounded-lg text-sm font-semibold cursor-pointer text-white shadow-md hover:shadow-lg transition-shadow duration-300"
+//                 style={{
+//                   background: GRADIENTS.cta,
+//                 }}
+//               >
+//                 Contact Us
+//               </motion.button>
+//             </Link>
+//           </div>
+
+//           {/* Mobile menu button */}
+//           <button
+//             className="lg:hidden p-2 rounded-lg transition-all duration-200 hover:bg-gray-100"
+//             style={{ color: getNavTextColor() }}
+//             onClick={() => setMobileOpen(!mobileOpen)}
+//           >
+//             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
+//           </button>
+//         </div>
+
+//         {/* Mobile Menu */}
+//         <AnimatePresence>
+//           {mobileOpen && (
+//             <motion.div
+//               initial={{ opacity: 0, height: 0 }}
+//               animate={{ opacity: 1, height: "auto" }}
+//               exit={{ opacity: 0, height: 0 }}
+//               transition={{ duration: 0.3, ease: "easeInOut" }}
+//               className="lg:hidden overflow-y-auto max-h-[calc(100vh-80px)]"
+//               style={{ 
+//                 background: COLORS.white, 
+//                 borderTop: `1px solid ${COLORS.gray100}`,
+//               }}
+//             >
+//               <div className="px-4 py-4 space-y-1">
+//                 <Link
+//                   href="/"
+//                   onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 font-medium rounded-xl transition-all duration-200 hover:bg-gray-50 hover:translate-x-1"
+//                   style={{ color: COLORS.gray700 }}
+//                 >
+//                   Home
+//                 </Link>
+
+//                 {/* Company Mobile */}
+//                 <div>
+//                   <button
+//                     className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-xl transition-all duration-200"
+//                     style={{ 
+//                       color: mobileExpanded === "company" ? COLORS.primary : COLORS.gray700,
+//                       background: mobileExpanded === "company" ? COLORS.gray50 : "transparent",
+//                     }}
+//                     onClick={() => setMobileExpanded(mobileExpanded === "company" ? null : "company")}
+//                   >
+//                     Company
+//                     <ChevronDown size={16} className="transition-transform duration-200" style={{
+//                       transform: mobileExpanded === "company" ? "rotate(180deg)" : "rotate(0deg)",
+//                     }} />
+//                   </button>
+//                   <AnimatePresence>
+//                     {mobileExpanded === "company" && (
+//                       <motion.div
+//                         initial={{ opacity: 0, height: 0 }}
+//                         animate={{ opacity: 1, height: "auto" }}
+//                         exit={{ opacity: 0, height: 0 }}
+//                         className="pl-5 space-y-1 overflow-hidden"
+//                       >
+//                         {navItems.company.dropdown.map((item) => (
+//                           <Link
+//                             key={item.href}
+//                             href={item.href}
+//                             onClick={() => setMobileOpen(false)}
+//                             className="block px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:bg-gray-50 hover:translate-x-1"
+//                             style={{ color: COLORS.gray600 }}
+//                           >
+//                             {item.label}
+//                           </Link>
+//                         ))}
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 </div>
+
+//                 {/* Products Mobile */}
+//                 <div>
+//                   <button
+//                     className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-xl transition-all duration-200"
+//                     style={{ 
+//                       color: mobileExpanded === "products" ? COLORS.primary : COLORS.gray700,
+//                       background: mobileExpanded === "products" ? COLORS.gray50 : "transparent",
+//                     }}
+//                     onClick={() => setMobileExpanded(mobileExpanded === "products" ? null : "products")}
+//                   >
+//                     Products
+//                     <ChevronDown size={16} className="transition-transform duration-200" style={{
+//                       transform: mobileExpanded === "products" ? "rotate(180deg)" : "rotate(0deg)",
+//                     }} />
+//                   </button>
+//                   <AnimatePresence>
+//                     {mobileExpanded === "products" && (
+//                       <motion.div
+//                         initial={{ opacity: 0, height: 0 }}
+//                         animate={{ opacity: 1, height: "auto" }}
+//                         exit={{ opacity: 0, height: 0 }}
+//                         className="pl-5 space-y-3 overflow-hidden"
+//                       >
+//                         {navItems.products.megaMenu.map((division) => (
+//                           <div key={division.slug} className="mt-2">
+//                             <Link
+//                               href={`/products/${division.slug}`}
+//                               onClick={() => setMobileOpen(false)}
+//                               className="block text-xs font-bold px-4 py-1 uppercase tracking-wider text-blue-700"
+//                             >
+//                               {division.division}
+//                             </Link>
+//                             <div className="space-y-1 mt-1">
+//                               {division.items.map((item) => (
+//                                 <Link
+//                                   key={item.href}
+//                                   href={item.href}
+//                                   onClick={() => setMobileOpen(false)}
+//                                   className="block px-4 py-2 text-sm rounded-xl transition-all duration-200 hover:bg-gray-50 hover:translate-x-1"
+//                                   style={{ color: COLORS.gray600 }}
+//                                 >
+//                                   {item.label}
+//                                 </Link>
+//                               ))}
+//                             </div>
+//                           </div>
+//                         ))}
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 </div>
+
+//                 {/* Application Areas Mobile */}
+//                 <div>
+//                   <button
+//                     className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-xl transition-all duration-200"
+//                     style={{ 
+//                       color: mobileExpanded === "applications" ? COLORS.primary : COLORS.gray700,
+//                       background: mobileExpanded === "applications" ? COLORS.gray50 : "transparent",
+//                     }}
+//                     onClick={() => setMobileExpanded(mobileExpanded === "applications" ? null : "applications")}
+//                   >
+//                     Application Areas
+//                     <ChevronDown size={16} className="transition-transform duration-200" style={{
+//                       transform: mobileExpanded === "applications" ? "rotate(180deg)" : "rotate(0deg)",
+//                     }} />
+//                   </button>
+//                   <AnimatePresence>
+//                     {mobileExpanded === "applications" && (
+//                       <motion.div
+//                         initial={{ opacity: 0, height: 0 }}
+//                         animate={{ opacity: 1, height: "auto" }}
+//                         exit={{ opacity: 0, height: 0 }}
+//                         className="pl-5 space-y-1 overflow-hidden"
+//                       >
+//                         {navItems.applicationAreas.dropdown.map((item) => (
+//                           <Link
+//                             key={item.href}
+//                             href={item.href}
+//                             onClick={() => setMobileOpen(false)}
+//                             className="block px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:bg-gray-50 hover:translate-x-1"
+//                             style={{ color: COLORS.gray600 }}
+//                           >
+//                             {item.label}
+//                           </Link>
+//                         ))}
+//                         <Link
+//                           href="/application-areas"
+//                           onClick={() => setMobileOpen(false)}
+//                           className="block px-4 py-2.5 text-sm font-semibold text-cyan-600"
+//                         >
+//                           View All Industries →
+//                         </Link>
+//                       </motion.div>
+//                     )}
+//                   </AnimatePresence>
+//                 </div>
+
+//                 <Link
+//                   href="/clients"
+//                   onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 font-medium rounded-xl transition-all duration-200 hover:bg-gray-50 hover:translate-x-1"
+//                   style={{ color: COLORS.gray700 }}
+//                 >
+//                   Clients
+//                 </Link>
+
+//                 <Link
+//                   href="/news-events"
+//                   onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 font-medium rounded-xl transition-all duration-200 hover:bg-gray-50 hover:translate-x-1"
+//                   style={{ color: COLORS.gray700 }}
+//                 >
+//                   News & Events
+//                 </Link>
+
+//                 <Link
+//                   href="/contact"
+//                   onClick={() => setMobileOpen(false)}
+//                   className="block px-4 py-3 mt-3 text-center font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] shadow-md"
+//                   style={{
+//                     background: GRADIENTS.cta,
+//                     color: COLORS.white,
+//                   }}
+//                 >
+//                   Contact Us
+//                 </Link>
+//               </div>
+//             </motion.div>
+//           )}
+//         </AnimatePresence>
+//       </nav>
+//     </header>
+//   );
+// }
+
+
 "use client";
 import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
@@ -1239,7 +2450,8 @@ import { unique_aqua_logo } from "@/public";
 
 // ─── Enhanced Brand color palette ────────────────────────────
 const COLORS = {
-  primary: "#1E3A8A",
+  primary: "#0F2B6D",
+  primaryLight: "#1E4A8A",
   secondary: "#06B6D4",
   accent: "#67E8F9",
   dark: "#0F2B6D",
@@ -1255,17 +2467,14 @@ const COLORS = {
 };
 
 const GRADIENTS = {
-  light: "linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.95) 100%)",
   cta: "linear-gradient(135deg, #06B6D4 0%, #3B82F6 100%)",
   ctaHover: "linear-gradient(135deg, #0891B2 0%, #2563EB 100%)",
-  megaFooter: "linear-gradient(90deg, #1E3A8A 0%, #06B6D4 100%)",
-  // Darker navbar gradient for better separation from hero
-  navbarTransparent: "linear-gradient(135deg, rgba(15,35,80,0.85) 0%, rgba(6,120,140,0.8) 100%)",
+  megaFooter: "linear-gradient(90deg, #0F2B6D 0%, #06B6D4 100%)",
 };
 
 const companyInfo = {
-  phone: "+91-253-6699936",
-  email: "amitrudre@gmail.com",
+  phone: "+91-0253-2941322",
+  email: "sales.unique2010@gmail.com",
 };
 
 export default function Navbar() {
@@ -1275,6 +2484,7 @@ export default function Navbar() {
   const [mobileExpanded, setMobileExpanded] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
   const closeTimeout = useRef(null);
+  const navbarRef = useRef(null);
 
   useEffect(() => {
     setIsMounted(true);
@@ -1285,7 +2495,21 @@ export default function Navbar() {
     
     onScroll();
     window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    
+    // Click outside detection
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setActiveDropdown(null);
+        setMobileOpen(false);
+      }
+    };
+    
+    document.addEventListener("mousedown", handleClickOutside);
+    
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, []);
 
   const handleMouseEnter = (key) => {
@@ -1294,341 +2518,344 @@ export default function Navbar() {
   };
   
   const handleMouseLeave = () => {
-    closeTimeout.current = setTimeout(() => setActiveDropdown(null), 150);
+    setActiveDropdown(null);
   };
 
-  const itemHover = {
-    onMouseEnter: (e) => { 
-      e.currentTarget.style.background = COLORS.gray100; 
-      e.currentTarget.style.color = COLORS.primary; 
-    },
-    onMouseLeave: (e) => { 
-      e.currentTarget.style.background = ""; 
-      e.currentTarget.style.color = COLORS.gray700; 
-    },
-  };
-
-  const navLinkStyle = (extra = "") =>
-    `${extra} px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200`;
-
-  const getNavTextColor = (scrolled) => {
-    if (!isMounted) return COLORS.white;
-    return scrolled ? COLORS.gray700 : COLORS.white;
+  // This function closes ALL dropdowns immediately when any link is clicked
+  const handleLinkClick = () => {
+    setActiveDropdown(null);
+    setMobileOpen(false);
+    setMobileExpanded(null);
   };
 
   const getNavBackground = () => {
-    if (!isMounted) return GRADIENTS.navbarTransparent;
-    // Use solid white when scrolled for better readability
-    return scrolled ? COLORS.white : GRADIENTS.navbarTransparent;
+    if (!isMounted) return "#ffffff";
+    return "#ffffff";
   };
 
   const getTopBarBackground = () => {
-    if (!isMounted) return "rgba(89, 146, 198, 1)";
-    return scrolled ? "rgba(255,255,255,0.95)" : "rgba(89, 146, 198, 1)";
+    if (!isMounted) return "#67E8F9";
+    return "#67E8F9";
   };
 
   const getTopBarTextColor = () => {
-    if (!isMounted) return COLORS.white;
-    return scrolled ? COLORS.gray600 : COLORS.white;
+    if (!isMounted) return COLORS.primary;
+    return COLORS.primary;
   };
 
   const getBorderBottom = () => {
-    if (!isMounted) return "1px solid rgba(255,255,255,0.2)";
-    return scrolled ? `1px solid ${COLORS.gray200}` : "1px solid rgba(255,255,255,0.2)";
+    if (!isMounted) return "1px solid rgba(0,0,0,0.1)";
+    return scrolled ? `1px solid ${COLORS.gray200}` : "1px solid rgba(0,0,0,0.08)";
+  };
+
+  const getNavTextColor = () => {
+    if (!isMounted) return COLORS.gray700;
+    return COLORS.gray700;
   };
 
   return (
     <header
+      ref={navbarRef}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
       style={{ 
-        boxShadow: isMounted && scrolled ? `0 8px 30px -8px rgba(0,0,0,0.12), 0 4px 12px -6px rgba(0,0,0,0.05)` : "none",
+        boxShadow: isMounted && scrolled ? "0 4px 20px -6px rgba(0,0,0,0.12)" : "0 2px 10px -5px rgba(0,0,0,0.08)",
       }}
     >
-      {/* ── Top info bar ─────────────────────────────────────── */}
+      {/* ── Top info bar - visible initially, hides on scroll ────── */}
       <div
-        className="hidden md:block transition-all duration-300"
+        className="hidden md:block transition-all duration-300 overflow-hidden"
         style={{
           background: getTopBarBackground(),
-          backdropFilter: "blur(12px)",
           borderBottom: "none",
+          maxHeight: scrolled ? "0" : "40px",
+          opacity: scrolled ? 0 : 1,
+          paddingTop: scrolled ? "0" : "6px",
+          paddingBottom: scrolled ? "0" : "6px",
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 py-1.5 flex justify-between items-center text-xs">
+        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center text-xs">
           <div className="flex items-center gap-1.5 font-medium tracking-wide" style={{ color: getTopBarTextColor() }}>
-            <Droplets size={12} style={{ color: COLORS.accent }} />
+            <Droplets size={12} style={{ color: COLORS.primary }} />
             <span>Unique Aqua Systems — Total Water Management Since 2002</span>
           </div>
 
           <div className="flex items-center gap-5">
             <a
               href={`tel:${companyInfo.phone}`}
-              className="flex items-center gap-1.5 font-medium transition-all duration-200"
+              className="flex items-center gap-1.5 font-medium transition-colors duration-200"
               style={{ color: getTopBarTextColor() }}
-              onMouseEnter={e => e.currentTarget.style.color = COLORS.accent}
+              onMouseEnter={e => e.currentTarget.style.color = COLORS.white}
               onMouseLeave={e => e.currentTarget.style.color = getTopBarTextColor()}
             >
-              <Phone size={11} style={{ color: COLORS.accent }} /> {companyInfo.phone}
+              <Phone size={11} style={{ color: COLORS.primary }} /> {companyInfo.phone}
             </a>
-            <span style={{ color: scrolled ? COLORS.gray300 : "rgba(255,255,255,0.3)" }}>|</span>
+            <span style={{ color: COLORS.primary, opacity: 0.3 }}>|</span>
             <a
               href={`mailto:${companyInfo.email}`}
-              className="flex items-center gap-1.5 font-medium transition-all duration-200"
+              className="flex items-center gap-1.5 font-medium transition-colors duration-200"
               style={{ color: getTopBarTextColor() }}
-              onMouseEnter={e => e.currentTarget.style.color = COLORS.accent}
+              onMouseEnter={e => e.currentTarget.style.color = COLORS.white}
               onMouseLeave={e => e.currentTarget.style.color = getTopBarTextColor()}
             >
-              <Mail size={11} style={{ color: COLORS.accent }} /> {companyInfo.email}
+              <Mail size={11} style={{ color: COLORS.primary }} /> {companyInfo.email}
             </a>
           </div>
         </div>
       </div>
 
-      {/* ── Main nav with premium glassmorphism ─────────────────────── */}
+      {/* ── Main nav with white background ──────────────────────── */}
       <nav
         className="transition-all duration-300"
         style={{
           background: getNavBackground(),
-          backdropFilter: scrolled ? "none" : "blur(16px)",
+          backdropFilter: "none",
+          WebkitBackdropFilter: "none",
           borderBottom: getBorderBottom(),
         }}
       >
-        <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-          <Link href="/" className="flex items-center transition-all duration-300 hover:opacity-90">
-            <Image
-              src={unique_aqua_logo}
-              alt="Unique Aqua Logo"
-              width={130}
-              height={36}
-              className="h-9 w-auto object-contain"
-              priority
-            />
+        <div className="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" onClick={handleLinkClick} className="flex items-center shrink-0 transition-opacity duration-200 hover:opacity-90">
+            <div className="relative">
+              <Image
+                src={unique_aqua_logo}
+                alt="Unique Aqua Logo"
+                width={180}
+                height={52}
+                className="h-12 w-auto object-contain"
+                priority
+                style={{ 
+                  filter: "none",
+                  imageRendering: "crisp-edges",
+                }}
+              />
+            </div>
           </Link>
 
-          {/* ── Desktop links ──────────────────────────────── */}
-          <div className="hidden lg:flex items-center gap-6">
-  <Link
-    href="/"
-    className={`${navLinkStyle("text-[15px] relative group")}`}
-    style={{ color: getNavTextColor(scrolled) }}
-    onMouseEnter={e => {
-      e.currentTarget.style.color = "#67E8F9";
-    }}
-    onMouseLeave={e => {
-      e.currentTarget.style.color = getNavTextColor(scrolled);
-    }}
-  >
-    Home
-    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-  </Link>
-
-  {/* Company */}
-  <div className="relative" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
-    <button
-      className={navLinkStyle("flex items-center gap-1 text-[15px] relative group")}
-      style={{ color: getNavTextColor(scrolled) }}
-      onMouseEnter={e => {
-        e.currentTarget.style.color = "#67E8F9";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.color = getNavTextColor(scrolled);
-      }}
-    >
-      Company <ChevronDown size={16} />
-      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-    </button>
-
-    <AnimatePresence>
-      {activeDropdown === "company" && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-lg shadow-md overflow-hidden z-50 border border-gray-100"
-        >
-          {navItems.company.dropdown.map((item) => (
+          {/* ── Desktop navigation ──────────────────────────────── */}
+          <div className="hidden lg:flex items-center gap-2">
+            {/* Home Link */}
             <Link
-              key={item.href}
-              href={item.href}
-              className="block px-4 py-3 text-base transition-all duration-200 hover:bg-gray-100 hover:text-blue-600"
-              style={{ color: COLORS.gray700 }}
+              href="/"
+              onClick={handleLinkClick}
+              className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+              style={{ color: getNavTextColor() }}
+              onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+              onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
             >
-              {item.label}
+              Home
+              <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
             </Link>
-          ))}
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
 
-  {/* Products */}
-  <div className="relative" onMouseEnter={() => handleMouseEnter("products")} onMouseLeave={handleMouseLeave}>
-    <button
-      className={navLinkStyle("flex items-center gap-1 text-[15px] relative group")}
-      style={{ color: getNavTextColor(scrolled) }}
-      onMouseEnter={e => {
-        e.currentTarget.style.color = "#67E8F9";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.color = getNavTextColor(scrolled);
-      }}
-    >
-      Products <ChevronDown size={16} />
-      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-    </button>
+            {/* Company Dropdown */}
+            <div className="relative" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
+              <button
+                className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+                style={{ color: getNavTextColor() }}
+                onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+                onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+              >
+                Company <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+                <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+              </button>
 
-    <AnimatePresence>
-      {activeDropdown === "products" && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.2 }}
-          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[750px] bg-white rounded-xl shadow-lg overflow-hidden z-50 border border-gray-100"
-        >
-          <div className="grid grid-cols-3 divide-x divide-gray-100">
-            {navItems.products.megaMenu.map((division) => (
-              <div key={division.slug} className="p-5">
-                <div className="flex items-center gap-2 mb-3">
-                  <div className="w-2 h-2 rounded-full bg-blue-600" />
-                  <Link
-                    href={`/products/${division.slug}`}
-                    className="text-sm font-bold uppercase tracking-wider text-blue-700 hover:underline"
+              <AnimatePresence>
+                {activeDropdown === "company" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-xl overflow-hidden z-50 border border-gray-100"
                   >
-                    {division.division}
-                  </Link>
-                </div>
+                    <div className="py-2">
+                      {navItems.company.dropdown.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={handleLinkClick}
+                          className="block px-4 py-2.5 text-sm font-medium transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
+                          style={{ color: COLORS.gray700 }}
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
 
-                <div className="space-y-1">
-                  {division.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="block text-base rounded-lg px-2 py-1.5 text-gray-600 transition-all duration-200 hover:bg-gray-100 hover:text-blue-600 hover:translate-x-1"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+            {/* Products Mega Menu */}
+            <div className="relative" onMouseEnter={() => handleMouseEnter("products")} onMouseLeave={handleMouseLeave}>
+              <button
+                className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+                style={{ color: getNavTextColor() }}
+                onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+                onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+              >
+                Products <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+                <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+              </button>
 
-          <div className="px-6 py-3 flex items-center justify-between bg-blue-600">
-            <span className="text-sm font-medium text-white">
-              Explore all products across 3 divisions
-            </span>
+              <AnimatePresence>
+                {activeDropdown === "products" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[1100px] bg-white rounded-2xl shadow-2xl overflow-hidden z-50 border border-gray-100"
+                  >
+                    <div className="grid grid-cols-3 divide-x divide-gray-100">
+                      {navItems.products.megaMenu.map((division) => (
+                        <div key={division.slug} className="p-5">
+                          <div className="flex items-center gap-2 mb-3">
+                            <div className="w-1.5 h-1.5 rounded-full bg-cyan-500" />
+                            <Link
+                              href={`/products/${division.slug}`}
+                              onClick={handleLinkClick}
+                              className="text-xs font-bold uppercase tracking-wider text-blue-700 hover:text-cyan-600 transition-colors"
+                            >
+                              {division.division}
+                            </Link>
+                          </div>
+
+                          <div className="space-y-1 max-h-[400px] overflow-y-auto custom-scrollbar">
+                            {division.items.map((item) => (
+                              <Link
+                                key={item.href}
+                                href={item.href}
+                                onClick={handleLinkClick}
+                                className="block text-sm rounded-lg px-3 py-2 text-gray-600 transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
+                              >
+                                {item.label}
+                              </Link>
+                            ))}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="px-6 py-3 flex items-center justify-between bg-gradient-to-r from-blue-700 to-cyan-600">
+                      <span className="text-sm font-medium text-white">
+                        Complete water treatment solutions across 3 divisions
+                      </span>
+                      <Link
+                        href="/products"
+                        onClick={handleLinkClick}
+                        className="flex items-center gap-1 text-sm font-semibold text-white group"
+                      >
+                        View All Products
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Application Areas Dropdown */}
+            <div className="relative" onMouseEnter={() => handleMouseEnter("applications")} onMouseLeave={handleMouseLeave}>
+              <button
+                className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+                style={{ color: getNavTextColor() }}
+                onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+                onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+              >
+                Application Areas <ChevronDown size={14} className="transition-transform duration-200 group-hover:rotate-180" />
+                <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+              </button>
+
+              <AnimatePresence>
+                {activeDropdown === "applications" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 8 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white rounded-xl shadow-xl overflow-hidden z-50 border border-gray-100"
+                  >
+                    <div className="py-2">
+                      {navItems.applicationAreas.dropdown.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={handleLinkClick}
+                          className="block px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
+                        >
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                    <div className="border-t border-gray-100 bg-gray-50">
+                      <Link
+                        href="/application-areas"
+                        onClick={handleLinkClick}
+                        className="flex items-center gap-2 px-4 py-3 text-sm font-semibold text-cyan-600 group"
+                      >
+                        View All Industries
+                        <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      </Link>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Clients Link */}
             <Link
-              href="/products"
-              className="flex items-center gap-1 text-sm font-bold text-white group"
+              href="/clients"
+              onClick={handleLinkClick}
+              className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+              style={{ color: getNavTextColor() }}
+              onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+              onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
             >
-              View All
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition" />
+              Clients
+              <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+            </Link>
+
+            {/* News & Events Link */}
+            <Link
+              href="/news-events"
+              onClick={handleLinkClick}
+              className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+              style={{ color: getNavTextColor() }}
+              onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+              onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+            >
+              News & Events
+              <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+            </Link>
+
+            {/* CTA Button */}
+            <Link href="/contact" onClick={handleLinkClick} className="ml-3">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                className="px-5 py-2 rounded-lg text-sm font-semibold cursor-pointer text-white shadow-md hover:shadow-lg transition-shadow duration-300"
+                style={{
+                  background: GRADIENTS.cta,
+                }}
+              >
+                Contact Us
+              </motion.button>
             </Link>
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
 
-  {/* Application Areas */}
-  <div className="relative" onMouseEnter={() => handleMouseEnter("applications")} onMouseLeave={handleMouseLeave}>
-    <button
-      className={navLinkStyle("flex items-center gap-1 text-[15px] relative group")}
-      style={{ color: getNavTextColor(scrolled) }}
-      onMouseEnter={e => {
-        e.currentTarget.style.color = "#67E8F9";
-      }}
-      onMouseLeave={e => {
-        e.currentTarget.style.color = getNavTextColor(scrolled);
-      }}
-    >
-      Application Areas <ChevronDown size={16} />
-      <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-    </button>
-
-    <AnimatePresence>
-      {activeDropdown === "applications" && (
-        <motion.div
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 10 }}
-          transition={{ duration: 0.2 }}
-          className="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-md overflow-hidden z-50 border border-gray-100"
-        >
-          {navItems.applicationAreas.dropdown.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="block px-4 py-2.5 text-base text-gray-700 transition-all duration-200 hover:bg-gray-100 hover:text-blue-600"
-            >
-              {item.label}
-            </Link>
-          ))}
-
-          <div className="border-t border-gray-200">
-            <Link
-              href="/application-areas"
-              className="flex items-center gap-2 px-4 py-3 text-sm font-semibold text-blue-600 group"
-            >
-              View All Industries
-              <ArrowRight size={14} className="group-hover:translate-x-1 transition" />
-            </Link>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
-
-  <Link
-    href="/clients"
-    className={`${navLinkStyle("text-[15px] relative group")}`}
-    style={{ color: getNavTextColor(scrolled) }}
-    onMouseEnter={e => (e.currentTarget.style.color = "#67E8F9")}
-    onMouseLeave={e => (e.currentTarget.style.color = getNavTextColor(scrolled))}
-  >
-    Clients
-    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-  </Link>
-
-  <Link
-    href="/news-events"
-    className={`${navLinkStyle("text-[15px] relative group")}`}
-    style={{ color: getNavTextColor(scrolled) }}
-    onMouseEnter={e => (e.currentTarget.style.color = "#67E8F9")}
-    onMouseLeave={e => (e.currentTarget.style.color = getNavTextColor(scrolled))}
-  >
-    News & Events
-    <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-blue-600  transition-all duration-300 group-hover:w-full"></span>
-  </Link>
-
-  {/* CTA Button */}
-  <Link href="/contact">
-  <motion.div
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.98 }}
-    className="ml-2 px-5 py-2 rounded-lg text-base font-semibold cursor-pointer text-white transition-all duration-300 shadow-sm"
-    style={{
-      background: "linear-gradient(135deg, #06B6D4, #3B82F6)",
-      boxShadow: "0 8px 25px -5px rgba(6,182,212,0.4)",
-    }}
-  >
-    Contact Us
-  </motion.div>
-</Link>
-</div>
-
-          {/* Mobile toggle */}
+          {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-lg transition-all duration-200 hover:bg-white/10"
-            style={{ color: getNavTextColor(scrolled) }}
+            className="lg:hidden p-2 rounded-lg transition-all duration-200 hover:bg-gray-100"
+            style={{ color: getNavTextColor() }}
             onClick={() => setMobileOpen(!mobileOpen)}
           >
             {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
 
-        {/* Mobile menu - keep existing code */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {mobileOpen && (
             <motion.div
@@ -1636,34 +2863,34 @@ export default function Navbar() {
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              className="lg:hidden overflow-y-auto max-h-[80vh]"
+              className="lg:hidden overflow-y-auto max-h-[calc(100vh-80px)]"
               style={{ 
                 background: COLORS.white, 
-                borderTop: `1px solid ${COLORS.gray200}`,
-                boxShadow: "0 -4px 10px rgba(0,0,0,0.05)"
+                borderTop: `1px solid ${COLORS.gray100}`,
               }}
             >
-              {/* Mobile menu content - same as your existing code */}
               <div className="px-4 py-4 space-y-1">
-                <Link href="/" onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 font-medium rounded-lg transition-all duration-200 hover:translate-x-1"
+                <Link
+                  href="/"
+                  onClick={handleLinkClick}
+                  className="block px-4 py-3 font-medium rounded-xl transition-all duration-200 hover:bg-gray-50"
                   style={{ color: COLORS.gray700 }}
-                  {...itemHover}
                 >
                   Home
                 </Link>
+
+                {/* Company Mobile */}
                 <div>
                   <button
-                    className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-lg transition-all duration-200"
+                    className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-xl transition-all duration-200"
                     style={{ 
                       color: mobileExpanded === "company" ? COLORS.primary : COLORS.gray700,
-                      background: mobileExpanded === "company" ? COLORS.gray100 : "transparent",
+                      background: mobileExpanded === "company" ? COLORS.gray50 : "transparent",
                     }}
                     onClick={() => setMobileExpanded(mobileExpanded === "company" ? null : "company")}
                   >
                     Company
-                    <ChevronDown size={16} style={{
-                      transition: "transform 0.2s",
+                    <ChevronDown size={16} className="transition-transform duration-200" style={{
                       transform: mobileExpanded === "company" ? "rotate(180deg)" : "rotate(0deg)",
                     }} />
                   </button>
@@ -1673,13 +2900,15 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="pl-4 space-y-1 overflow-hidden"
+                        className="pl-5 space-y-1 overflow-hidden"
                       >
                         {navItems.company.dropdown.map((item) => (
-                          <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
-                            className="block px-4 py-2 text-sm rounded-lg transition-all duration-200 hover:translate-x-1"
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={handleLinkClick}
+                            className="block px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:bg-gray-50"
                             style={{ color: COLORS.gray600 }}
-                            {...itemHover}
                           >
                             {item.label}
                           </Link>
@@ -1688,18 +2917,19 @@ export default function Navbar() {
                     )}
                   </AnimatePresence>
                 </div>
+
+                {/* Products Mobile */}
                 <div>
                   <button
-                    className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-lg transition-all duration-200"
+                    className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-xl transition-all duration-200"
                     style={{ 
                       color: mobileExpanded === "products" ? COLORS.primary : COLORS.gray700,
-                      background: mobileExpanded === "products" ? COLORS.gray100 : "transparent",
+                      background: mobileExpanded === "products" ? COLORS.gray50 : "transparent",
                     }}
                     onClick={() => setMobileExpanded(mobileExpanded === "products" ? null : "products")}
                   >
                     Products
-                    <ChevronDown size={16} style={{
-                      transition: "transform 0.2s",
+                    <ChevronDown size={16} className="transition-transform duration-200" style={{
                       transform: mobileExpanded === "products" ? "rotate(180deg)" : "rotate(0deg)",
                     }} />
                   </button>
@@ -1709,43 +2939,49 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="pl-4 space-y-3 overflow-hidden"
+                        className="pl-5 space-y-3 overflow-hidden"
                       >
                         {navItems.products.megaMenu.map((division) => (
-                          <div key={division.slug}>
-                            <Link href={`/products/${division.slug}`} onClick={() => setMobileOpen(false)}
-                              className="block text-xs font-bold px-4 py-1 uppercase tracking-wider"
-                              style={{ color: COLORS.primary }}
+                          <div key={division.slug} className="mt-2">
+                            <Link
+                              href={`/products/${division.slug}`}
+                              onClick={handleLinkClick}
+                              className="block text-xs font-bold px-4 py-1 uppercase tracking-wider text-blue-700"
                             >
                               {division.division}
                             </Link>
-                            {division.items.map((item) => (
-                              <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
-                                className="block px-4 py-2 text-sm rounded-lg transition-all duration-200 hover:translate-x-1"
-                                style={{ color: COLORS.gray600 }}
-                                {...itemHover}
-                              >
-                                {item.label}
-                              </Link>
-                            ))}
+                            <div className="space-y-1 mt-1">
+                              {division.items.map((item) => (
+                                <Link
+                                  key={item.href}
+                                  href={item.href}
+                                  onClick={handleLinkClick}
+                                  className="block px-4 py-2 text-sm rounded-xl transition-all duration-200 hover:bg-gray-50"
+                                  style={{ color: COLORS.gray600 }}
+                                >
+                                  {item.label}
+                                </Link>
+                              ))}
+                            </div>
                           </div>
                         ))}
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
+
+                {/* Application Areas Mobile */}
                 <div>
                   <button
-                    className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-lg transition-all duration-200"
+                    className="w-full flex items-center justify-between px-4 py-3 font-medium rounded-xl transition-all duration-200"
                     style={{ 
                       color: mobileExpanded === "applications" ? COLORS.primary : COLORS.gray700,
-                      background: mobileExpanded === "applications" ? COLORS.gray100 : "transparent",
+                      background: mobileExpanded === "applications" ? COLORS.gray50 : "transparent",
                     }}
                     onClick={() => setMobileExpanded(mobileExpanded === "applications" ? null : "applications")}
                   >
                     Application Areas
-                    <ChevronDown size={16} style={{
-                      transition: "transform 0.2s",
+                    <ChevronDown size={16} className="transition-transform duration-200" style={{
                       transform: mobileExpanded === "applications" ? "rotate(180deg)" : "rotate(0deg)",
                     }} />
                   </button>
@@ -1755,39 +2991,53 @@ export default function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="pl-4 space-y-1 overflow-hidden"
+                        className="pl-5 space-y-1 overflow-hidden"
                       >
                         {navItems.applicationAreas.dropdown.map((item) => (
-                          <Link key={item.href} href={item.href} onClick={() => setMobileOpen(false)}
-                            className="block px-4 py-2 text-sm rounded-lg transition-all duration-200 hover:translate-x-1"
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={handleLinkClick}
+                            className="block px-4 py-2.5 text-sm rounded-xl transition-all duration-200 hover:bg-gray-50"
                             style={{ color: COLORS.gray600 }}
-                            {...itemHover}
                           >
                             {item.label}
                           </Link>
                         ))}
+                        <Link
+                          href="/application-areas"
+                          onClick={handleLinkClick}
+                          className="block px-4 py-2.5 text-sm font-semibold text-cyan-600"
+                        >
+                          View All Industries →
+                        </Link>
                       </motion.div>
                     )}
                   </AnimatePresence>
                 </div>
-                <Link href="/clients" onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 font-medium rounded-lg transition-all duration-200 hover:translate-x-1"
+
+                <Link
+                  href="/clients"
+                  onClick={handleLinkClick}
+                  className="block px-4 py-3 font-medium rounded-xl transition-all duration-200 hover:bg-gray-50"
                   style={{ color: COLORS.gray700 }}
-                  {...itemHover}
                 >
                   Clients
                 </Link>
-                <Link href="/news-events" onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 font-medium rounded-lg transition-all duration-200 hover:translate-x-1"
+
+                <Link
+                  href="/news-events"
+                  onClick={handleLinkClick}
+                  className="block px-4 py-3 font-medium rounded-xl transition-all duration-200 hover:bg-gray-50"
                   style={{ color: COLORS.gray700 }}
-                  {...itemHover}
                 >
-                  News &amp; Events
+                  News & Events
                 </Link>
+
                 <Link
                   href="/contact"
-                  onClick={() => setMobileOpen(false)}
-                  className="block px-4 py-3 text-center font-bold rounded-full transition-all duration-200 hover:scale-105"
+                  onClick={handleLinkClick}
+                  className="block px-4 py-3 mt-3 text-center font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] shadow-md"
                   style={{
                     background: GRADIENTS.cta,
                     color: COLORS.white,

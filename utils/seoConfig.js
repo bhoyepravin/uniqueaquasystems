@@ -11,8 +11,8 @@ export const siteSEO = {
   baseUrl: "https://www.uniqueaquasystems.com",
   defaultImage: "/og-uniqueaqua.jpg",
   locale: "en_IN",
-  email: "amitrudre@gmail.com",
-  phone: "+91-253-6699936",
+  email: "sales.unique2010@gmail.com",
+  phone: "+91-0253-2941322",
   address:
     "4, Sai Shree Industrial Estate, Plot No. 8, S.No. 82/1, MIDC Area, Ambad, Nashik - 422 010",
   foundingYear: "2002",
@@ -116,7 +116,7 @@ export const pageSEO = {
     title:
       "Contact Unique Aqua Systems | Water Treatment Enquiry | Nashik Maharashtra",
     description:
-      "Contact Unique Aqua Systems & Chemical Industries. Enquire about UNI-TREAT® chemicals, RO plants, DM plants, water softeners, filtration systems. Works: 4, Sai Shree Industrial Estate, Ambad, Nashik. Tel: +91-253-6699936.",
+      "Contact Unique Aqua Systems & Chemical Industries. Enquire about UNI-TREAT® chemicals, RO plants, DM plants, water softeners, filtration systems. Works: 4, Sai Shree Industrial Estate, Ambad, Nashik. Tel: +91-0253-2941322.",
     keywords:
       "contact Unique Aqua, water treatment enquiry Nashik, UNI-TREAT chemical quote, RO plant enquiry, water softener Nashik, Unique Aqua phone",
     canonical: "/contact",

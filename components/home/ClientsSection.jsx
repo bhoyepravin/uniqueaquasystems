@@ -62,9 +62,9 @@ export default function ClientsSection() {
           className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12 md:mb-16"
         >
           {[
-            { icon: Users, label: "Active Clients", value: "500+", color: "#1E3A8A" },
-            { icon: Building2, label: "Industries Served", value: "20+", color: "#06B6D4" },
-            { icon: Award, label: "Years of Trust", value: "20+", color: "#1E3A8A" },
+            { icon: Users, label: "Active Clients", value: "1000+", color: "#1E3A8A" },
+            { icon: Building2, label: "Industries Served", value: "200+", color: "#06B6D4" },
+            { icon: Award, label: "Years of Trust", value: "25+", color: "#1E3A8A" },
             { icon: TrendingUp, label: "Success Rate", value: "99%", color: "#06B6D4" },
           ].map((stat, idx) => {
             const Icon = stat.icon;

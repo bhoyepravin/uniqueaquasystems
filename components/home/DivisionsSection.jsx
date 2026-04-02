@@ -5,9 +5,25 @@ import { FlaskConical, Settings, Wrench, ArrowRight, Droplets, Shield, Zap } fro
 import { aboutData } from "@/lib/data";
 
 const iconMap = { FlaskConical, Settings, Wrench };
-const divisionLinks = ["/products/chemical", "/products/mechanical", "/products/spares"];
+
+// Ensure divisionLinks matches the number of divisions
+// Add fallback links if needed
+const getDivisionLink = (index) => {
+  const links = [
+    "/products/chemical",
+    "/products/mechanical", 
+    "/products/spares",
+    "/products/water-treatment" // Fallback for any extra divisions
+  ];
+  return links[index] || "/products";
+};
 
 export default function DivisionsSection() {
+  // Check if aboutData.divisions exists and is an array
+  if (!aboutData?.divisions || !Array.isArray(aboutData.divisions)) {
+    return null;
+  }
+
   return (
     <section className="relative w-full py-24 md:py-32 bg-gradient-to-b from-white via-gray-50 to-white overflow-hidden">
       {/* Background decorative elements */}
@@ -61,12 +77,14 @@ export default function DivisionsSection() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-4 gap-6 lg:gap-8">
           {aboutData.divisions.map((division, i) => {
             const Icon = iconMap[division.icon] || FlaskConical;
+            const divisionLink = getDivisionLink(i);
+            
             return (
               <motion.div
-                key={i}
+                key={division.id || i}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
@@ -74,7 +92,7 @@ export default function DivisionsSection() {
                 whileHover={{ y: -8 }}
                 className="h-full"
               >
-                <Link href={divisionLinks[i]} className="block h-full">
+                <Link href={divisionLink} className="block h-full">
                   <div className="relative bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden h-full border border-gray-100 group">
                     {/* Gradient border effect on hover */}
                     <div className="absolute inset-0 bg-gradient-to-r from-[#1E3A8A] to-[#06B6D4] opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl -z-10" style={{ padding: '1px' }} />

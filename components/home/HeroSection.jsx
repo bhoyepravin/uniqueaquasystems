@@ -9,53 +9,52 @@ import { slide_1, slide_2, slide_4, slide_5, slide_6 } from "@/public";
 
 export default function HeroSection() {
   const slides = [
-    {
-      title: "Unique Aqua Systems & Chemical Industries",
-      subtitle: "Total Water Treatment Solutions",
-      description:
-        "Providing professional consultancy and technical services across the Asian region since 2002.",
-      image: slide_1,
-      background: slide_1,
-      alt: "Industrial water treatment system",
-    },
-    {
-      title: "Innovative Water Treatment Technologies",
-      subtitle: "Advanced Solutions",
-      description:
-        "Combining innovative technologies with services delivered by highly skilled professionals.",
-      image: slide_2,
-      background: slide_2,
-      alt: "Advanced water treatment plant technology",
-    },
-    {
-      title: "Chemical Water Treatment",
-      subtitle: "Serving Since 2002",
-      description:
-        "Providing chemicals, mechanical systems and technical support for efficient water management.",
-      image: slide_4,
-      background: slide_4,
-      alt: "Chemical treatment consultancy services",
-    },
-    {
-      title: "Mechanical Water Treatment",
-      subtitle: "Serving Since 2002",
-      description:
-        "Providing chemicals, mechanical systems and technical support for efficient water management.",
-      image: slide_5,
-      background: slide_5,
-      alt: "Mechanical treatment consultancy services",
-    },
-    {
-      title: "Spares & Equipments",
-      subtitle: "Serving Since 2002",
-      description:
-        "Providing chemicals, mechanical systems and technical support for efficient water management.",
-      image: slide_6,
-      background: slide_6,
-      alt: "Spares & Equipments", 
-
-    },
-  ];
+  {
+    title: "Unique Aqua Systems & Chemical Industries",
+    subtitle: "Total Water Treatment Solutions",
+    description:
+      "Delivering complete water treatment solutions including design, supply, installation, and maintenance for various industries.",
+    image: slide_1,
+    background: slide_1,
+    alt: "Industrial water treatment system",
+  },
+  {
+    title: "Innovative Water Treatment Technologies",
+    subtitle: "Advanced Solutions",
+    description:
+      "Implementing cutting-edge technologies to enhance water purification efficiency, sustainability, and operational performance.",
+    image: slide_2,
+    background: slide_2,
+    alt: "Advanced water treatment plant technology",
+  },
+  {
+    title: "Chemical Water Treatment",
+    subtitle: "Serving Since 2002",
+    description:
+      "Specialized in water treatment chemicals, dosing systems, and solutions to improve water quality and prevent scaling, corrosion, and fouling.",
+    image: slide_4,
+    background: slide_4,
+    alt: "Chemical treatment consultancy services",
+  },
+  {
+    title: "Mechanical Water Treatment",
+    subtitle: "Serving Since 2002",
+    description:
+      "Providing filtration systems, RO plants, softeners, and other mechanical solutions for efficient and reliable water treatment processes.",
+    image: slide_5,
+    background: slide_5,
+    alt: "Mechanical treatment consultancy services",
+  },
+  {
+    title: "Spares & Equipments",
+    subtitle: "Serving Since 2002",
+    description:
+      "Offering a wide range of high-quality spare parts and equipment to ensure smooth operation and maintenance of water treatment systems.",
+    image: slide_6,
+    background: slide_6,
+    alt: "Spares & Equipments",
+  },
+];
 
   const [current, setCurrent] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
