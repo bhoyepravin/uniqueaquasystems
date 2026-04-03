@@ -2755,6 +2755,21 @@ export default function Navbar() {
               </AnimatePresence>
             </div>
 
+            {/* Product Gallery Link */}
+<Link
+  href="/product-gallery"
+  onClick={handleLinkClick}
+  className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+  style={{ color: getNavTextColor() }}
+  onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
+  onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
+>
+  Product Gallery
+  <span className="absolute left-3 right-3 -bottom-1 h-0.5 bg-cyan-500 scale-x-0 transition-transform duration-200 group-hover:scale-x-100" />
+</Link>
+
+            
+
             {/* Application Areas Dropdown */}
             <div className="relative" onMouseEnter={() => handleMouseEnter("applications")} onMouseLeave={handleMouseLeave}>
               <button

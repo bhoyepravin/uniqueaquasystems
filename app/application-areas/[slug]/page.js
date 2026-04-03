@@ -94,28 +94,7 @@ export default async function ApplicationAreaPage({ params }) {
               </div>
             </div>
 
-            {/* Related Products */}
-            {relatedProducts.length > 0 && (
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
-                <h2 className="text-xl font-bold text-gray-900 mb-6">Recommended Products</h2>
-                <div className="grid sm:grid-cols-2 gap-4">
-                  {relatedProducts.map((product, i) => (
-                    <Link key={i} href={`/products/${product.division}/${product.slug}`}>
-                      <div className="border border-gray-200 rounded-xl p-4 hover:border-[#0077B6] hover:bg-blue-50 transition-all group">
-                        <div className="text-xs text-gray-400 mb-1">
-                          {product.division === "chemical" ? "Chemical Division" : product.division === "mechanical" ? "Mechanical Division" : "Spares"}
-                        </div>
-                        <h3 className="font-bold text-gray-900 text-sm mb-1">{product.name}</h3>
-                        <p className="text-xs text-gray-500 line-clamp-2 mb-2">{product.shortDescription}</p>
-                        <span className="text-xs text-[#0077B6] font-semibold flex items-center gap-1">
-                          View Details <ArrowRight size={12} />
-                        </span>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
+           
           </div>
 
           {/* Sidebar */}
