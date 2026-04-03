@@ -2638,7 +2638,7 @@ export default function Navbar() {
             <Link
               href="/"
               onClick={handleLinkClick}
-              className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+              className="px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 relative group"
               style={{ color: getNavTextColor() }}
               onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
               onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
@@ -2650,7 +2650,7 @@ export default function Navbar() {
             {/* Company Dropdown */}
             <div className="relative" onMouseEnter={() => handleMouseEnter("company")} onMouseLeave={handleMouseLeave}>
               <button
-                className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+                className="px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
                 style={{ color: getNavTextColor() }}
                 onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
                 onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
@@ -2674,7 +2674,7 @@ export default function Navbar() {
                           key={item.href}
                           href={item.href}
                           onClick={handleLinkClick}
-                          className="block px-4 py-2.5 text-sm font-medium transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
+                          className="block px-4 py-2.5 text-sm font-bold transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
                           style={{ color: COLORS.gray700 }}
                         >
                           {item.label}
@@ -2689,7 +2689,7 @@ export default function Navbar() {
             {/* Products Mega Menu */}
             <div className="relative" onMouseEnter={() => handleMouseEnter("products")} onMouseLeave={handleMouseLeave}>
               <button
-                className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+                className="px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
                 style={{ color: getNavTextColor() }}
                 onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
                 onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
@@ -2738,7 +2738,7 @@ export default function Navbar() {
                     </div>
 
                     <div className="px-6 py-3 flex items-center justify-between bg-gradient-to-r from-blue-700 to-cyan-600">
-                      <span className="text-sm font-medium text-white">
+                      <span className="text-sm font-bold text-white">
                         Complete water treatment solutions across 3 divisions
                       </span>
                       <Link
@@ -2759,7 +2759,7 @@ export default function Navbar() {
 <Link
   href="/product-gallery"
   onClick={handleLinkClick}
-  className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+  className="px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 relative group"
   style={{ color: getNavTextColor() }}
   onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
   onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
@@ -2773,7 +2773,7 @@ export default function Navbar() {
             {/* Application Areas Dropdown */}
             <div className="relative" onMouseEnter={() => handleMouseEnter("applications")} onMouseLeave={handleMouseLeave}>
               <button
-                className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
+                className="px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 flex items-center gap-1 relative group"
                 style={{ color: getNavTextColor() }}
                 onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
                 onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
@@ -2797,7 +2797,7 @@ export default function Navbar() {
                           key={item.href}
                           href={item.href}
                           onClick={handleLinkClick}
-                          className="block px-4 py-2.5 text-sm font-medium text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
+                          className="block px-4 py-2.5 text-sm font-bold text-gray-700 transition-all duration-200 hover:bg-gray-50 hover:text-cyan-600"
                         >
                           {item.label}
                         </Link>
@@ -2822,7 +2822,7 @@ export default function Navbar() {
             <Link
               href="/clients"
               onClick={handleLinkClick}
-              className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+              className="px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 relative group"
               style={{ color: getNavTextColor() }}
               onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
               onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
@@ -2835,7 +2835,7 @@ export default function Navbar() {
             <Link
               href="/news-events"
               onClick={handleLinkClick}
-              className="px-3 py-2 text-sm font-medium rounded-lg transition-all duration-200 relative group"
+              className="px-3 py-2 text-sm font-bold rounded-lg transition-all duration-200 relative group"
               style={{ color: getNavTextColor() }}
               onMouseEnter={e => e.currentTarget.style.color = "#06B6D4"}
               onMouseLeave={e => e.currentTarget.style.color = getNavTextColor()}
