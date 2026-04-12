@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Droplets } from "lucide-react";
 import { companyInfo } from "@/lib/data";
+import Image from "next/image";
+import { unique_aqua_logo } from "@/public";
 
 export default function Footer() {
   return (
@@ -11,13 +13,16 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-[#0077B6] rounded-xl flex items-center justify-center">
-                <Droplets size={22} className="text-white" />
-              </div>
-              <div>
-                <div className="font-bold text-xl leading-tight">Unique Aqua</div>
-                <div className="text-xs text-white/60 leading-tight">Systems & Chemical Industries</div>
-              </div>
+              <div className="mb-4">
+  <div className="w-40 h-16 relative">
+    <Image
+      src= {unique_aqua_logo}
+      alt="Unique Aqua Logo"
+      fill
+      className="object-contain"
+    />
+  </div>
+</div>
             </div>
             <p className="text-white/70 text-sm leading-relaxed mb-3">
               ISO certified water treatment specialists since 2002. Chemical, mechanical & spares — total water management under one roof.
@@ -38,12 +43,14 @@ export default function Footer() {
                 <ul className="space-y-2 text-white/70">
                   <li><Link href="/products/chemical/cooling-towers-open-loop" className="hover:text-white transition-colors text-sm">Open Loop Cooling Systems</Link></li>
                   <li><Link href="/products/chemical/closed-loop-cooling-chillers" className="hover:text-white transition-colors text-sm">Closed Loop Cooling Systems</Link></li>
+                  <li> <Link href= "/products/chemical/ro-chemicals" className="hover:text-white transition-colors"> RO Chemicals </Link> </li>
                   <li><Link href="/products/chemical/boiler-water-treatment" className="hover:text-white transition-colors text-sm">Boiler Water Treatment</Link></li>
                   <li><Link href="/products/chemical/descaling-products" className="hover:text-white transition-colors text-sm">Descaling Products</Link></li>
                   <li><Link href="/products/chemical/speciality-chemicals" className="hover:text-white transition-colors text-sm">Speciality Chemicals</Link></li>
                   <li><Link href="/products/chemical/defoamers" className="hover:text-white transition-colors text-sm">Defoamers</Link></li>
                   <li><Link href="/products/chemical/etp-chemicals" className="hover:text-white transition-colors text-sm">ETP Chemicals</Link></li>
                   <li><Link href="/products/chemical/fire-side-chemicals" className="hover:text-white transition-colors text-sm">Fire Side Chemicals</Link></li>
+                  
                   <li><Link href="/products/chemical/sugar-process-chemicals" className="hover:text-white transition-colors text-sm">Sugar Process Chemicals</Link></li>
                 </ul>
               </div>

@@ -2473,7 +2473,7 @@ const GRADIENTS = {
 };
 
 const companyInfo = {
-  phone: "+91-0253-2941322",
+  phone: "+91-9322142163",
   email: "sales.unique2010@gmail.com",
 };
 

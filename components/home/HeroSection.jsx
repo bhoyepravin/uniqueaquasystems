@@ -5,17 +5,37 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { slide_1, slide_2, slide_4, slide_5, slide_6 } from "@/public";
+import { company_img, dm_plant, ro5000, ro500Chlorination, ro500SS, ro500Vertical, slide_1, slide_2, slide_4, slide_5, slide_6 } from "@/public";
 
 export default function HeroSection() {
   const slides = [
+    {
+    title: "Company Overview",
+    subtitle: "Unique Aqua Systems & Chemical Industries",
+    description:
+      "Unique Aqua Systems & Chemical Industries, established in 2002, is a leading provider of comprehensive water treatment solutions. We specialize in delivering high-quality products and services to various industries, ensuring efficient and sustainable water management practices.",
+    image: company_img,
+    // background: slide_1,
+    alt: "Industrial water treatment system",
+  },
+
+  {
+    title: "Deionized Water Treatment Solutions",
+    subtitle: "Deionized Water Treatment Solutions",
+    description:
+      "Deionized water treatment solutions for industrial applications, providing high-purity water for processes such as manufacturing, cooling, and boiler feedwater, ensuring optimal performance and equipment longevity.",
+    image: dm_plant,
+    // background: slide_1,
+    alt: "deionized water treatment system",
+  },
+
   {
     title: "Unique Aqua Systems & Chemical Industries",
     subtitle: "Total Water Treatment Solutions",
     description:
       "Delivering complete water treatment solutions including design, supply, installation, and maintenance for various industries.",
-    image: slide_1,
-    background: slide_1,
+    image: ro500Vertical,
+    // background: slide_1,
     alt: "Industrial water treatment system",
   },
   {
@@ -23,8 +43,8 @@ export default function HeroSection() {
     subtitle: "Advanced Solutions",
     description:
       "Implementing cutting-edge technologies to enhance water purification efficiency, sustainability, and operational performance.",
-    image: slide_2,
-    background: slide_2,
+    image: ro500SS,
+    // background: slide_2,
     alt: "Advanced water treatment plant technology",
   },
   {
@@ -32,8 +52,8 @@ export default function HeroSection() {
     subtitle: "Serving Since 2002",
     description:
       "Specialized in water treatment chemicals, dosing systems, and solutions to improve water quality and prevent scaling, corrosion, and fouling.",
-    image: slide_4,
-    background: slide_4,
+    image: ro500Chlorination,
+    // background: slide_4,
     alt: "Chemical treatment consultancy services",
   },
   {
@@ -41,8 +61,8 @@ export default function HeroSection() {
     subtitle: "Serving Since 2002",
     description:
       "Providing filtration systems, RO plants, softeners, and other mechanical solutions for efficient and reliable water treatment processes.",
-    image: slide_5,
-    background: slide_5,
+    image: ro5000,
+    // background: slide_5,
     alt: "Mechanical treatment consultancy services",
   },
   {
@@ -51,7 +71,7 @@ export default function HeroSection() {
     description:
       "Offering a wide range of high-quality spare parts and equipment to ensure smooth operation and maintenance of water treatment systems.",
     image: slide_6,
-    background: slide_6,
+    // background: slide_6,
     alt: "Spares & Equipments",
   },
 ];

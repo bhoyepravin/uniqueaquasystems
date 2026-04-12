@@ -145,6 +145,15 @@ export default function CTASection() {
               className="pt-6 border-t border-white/20"
             >
               <div className="flex flex-col sm:flex-row gap-6 justify-center text-white/90">
+              <a 
+                  href={`tel:${companyInfo.phone1}`} 
+                  className="flex items-center gap-2 hover:text-white transition-all duration-300 group"
+                >
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                    <Phone size={16} />
+                  </div>
+                  <span className="font-medium">{companyInfo.phone2}</span>
+                </a>
                 <a 
                   href={`tel:${companyInfo.phone1}`} 
                   className="flex items-center gap-2 hover:text-white transition-all duration-300 group"
@@ -155,6 +164,15 @@ export default function CTASection() {
                   <span className="font-medium">{companyInfo.phone1}</span>
                 </a>
                 <div className="hidden sm:block w-px h-6 bg-white/20" />
+                <a 
+                  href={`mailto:${companyInfo.email}`} 
+                  className="flex items-center gap-2 hover:text-white transition-all duration-300 group"
+                >
+                  <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-white/20 transition-colors">
+                    <Mail size={16} />
+                  </div>
+                  <span className="font-medium">{companyInfo.email2}</span>
+                </a>
                 <a 
                   href={`mailto:${companyInfo.email}`} 
                   className="flex items-center gap-2 hover:text-white transition-all duration-300 group"
