@@ -45,9 +45,9 @@ export default function Footer() {
                   <li><Link href="/products/chemical/closed-loop-cooling-chillers" className="hover:text-white transition-colors text-sm">Closed Loop Cooling Systems</Link></li>
                   <li> <Link href= "/products/chemical/ro-chemicals" className="hover:text-white transition-colors"> RO Chemicals </Link> </li>
                   <li><Link href="/products/chemical/boiler-water-treatment" className="hover:text-white transition-colors text-sm">Boiler Water Treatment</Link></li>
-                  <li><Link href="/products/chemical/descaling-products" className="hover:text-white transition-colors text-sm">Descaling Products</Link></li>
+                  <li><Link href="/products/chemical/descaling-products" className="hover:text-white transition-colors text-sm">Descaling Chemicals</Link></li>
                   <li><Link href="/products/chemical/speciality-chemicals" className="hover:text-white transition-colors text-sm">Speciality Chemicals</Link></li>
-                  <li><Link href="/products/chemical/defoamers" className="hover:text-white transition-colors text-sm">Defoamers</Link></li>
+                  <li><Link href="/products/chemical/defoamers" className="hover:text-white transition-colors text-sm">Antifoams and defoamers</Link></li>
                   <li><Link href="/products/chemical/etp-chemicals" className="hover:text-white transition-colors text-sm">ETP Chemicals</Link></li>
                   <li><Link href="/products/chemical/fire-side-chemicals" className="hover:text-white transition-colors text-sm">Fire Side Chemicals</Link></li>
                   

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { applicationAreas, getApplicationAreaBySlug, getProductBySlug } from "@/lib/data";
 import { siteSEO } from "@/utils/seoConfig";
 import { CheckCircle, ArrowRight, AlertCircle } from "lucide-react";
+import Image from "next/image";
 
 export function generateStaticParams() {
   return applicationAreas.map((a) => ({ slug: a.slug }));
@@ -51,7 +52,7 @@ export default async function ApplicationAreaPage({ params }) {
         </div>
 
         {/* Hero */}
-        <div
+        {/* <div
           className="rounded-3xl p-10 text-white mb-10"
           style={{ background: `linear-gradient(135deg, ${area.color}, #00B4D8)` }}
         >
@@ -62,7 +63,33 @@ export default async function ApplicationAreaPage({ params }) {
               {area.stats}
             </div>
           )}
-        </div>
+        </div> */}
+        <div
+  className="rounded-3xl p-10 text-white mb-10 flex items-center justify-between gap-8"
+  style={{ background: `linear-gradient(135deg, ${area.color}, #00B4D8)` }}
+>
+  <div className="flex-1">
+    <h1 className="text-4xl font-bold mb-4">{area.name} Water Treatment</h1>
+    <p className="text-white/90 text-lg max-w-2xl leading-relaxed">{area.description}</p>
+    {area.stats && (
+      <div className="mt-6 inline-block bg-white/20 backdrop-blur-sm rounded-xl px-4 py-2 text-sm font-medium">
+        {area.stats}
+      </div>
+    )}
+  </div>
+  
+  {area.headerImage && (
+    <div className="flex-shrink-0">
+      <Image 
+        src={area.headerImage}
+        alt={`${area.name} water treatment`}
+        className="w-48 h-48 object-cover rounded-2xl shadow-lg"
+        width={192}
+        height={192}
+      />
+    </div>
+  )}
+</div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">

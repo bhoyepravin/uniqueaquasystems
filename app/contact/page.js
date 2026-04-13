@@ -272,7 +272,7 @@ ${data.message}
                     <option>DM Plant</option>
                     <option>Water Softener</option>
                     <option>UV Disinfection System</option>
-                    <option>Descaling Products</option>
+                    <option>Descaling Chemicals</option>
                     <option>Sugar Process Chemicals</option>
                     <option>Water Testing Kits</option>
                     <option>Filter Cartridges</option>

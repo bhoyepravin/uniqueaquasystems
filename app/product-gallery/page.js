@@ -214,11 +214,11 @@ export default function GalleryPage() {
       });
 
   const categories = [
-    { id: "all", name: "All Photos", icon: Grid3x3, color: "#6B7280" },
+    // { id: "all", name: "All Photos", icon: Grid3x3, color: "#6B7280" },
     { id: "chemical", name: "Chemical Division", icon: FlaskConical, color: "#0077B6" },
     { id: "mechanical", name: "Mechanical Division", icon: Settings, color: "#0096C7" },
     { id: "spares", name: "Spares & Equipment", icon: Wrench, color: "#00B4D8" },
-    { id: "projects", name: "Installation Projects", icon: Building2, color: "#10B981" },
+    
     { id: "facility", name: "Manufacturing Facility", icon: Factory, color: "#F59E0B" },
   ];
 

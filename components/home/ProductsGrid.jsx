@@ -208,7 +208,7 @@ const featured = [
   { product: chemicalProducts.find(p => p.name === "UNI-TREAT® Sugar Process Chemicals") || chemicalProducts[8], division: "chemical" },
   { product: chemicalProducts.find(p => p.name === "UNI-TREAT® Defoamers") || chemicalProducts[5], division: "chemical" },
   { product: chemicalProducts.find(p => p.name === "UNI-TREAT® ETP Chemicals") || chemicalProducts[6], division: "chemical" },
-  { product: chemicalProducts.find(p => p.name === "UNI-TREAT® Fire Side System Chemicals") || chemicalProducts[7], division: "chemical" },
+  { product: chemicalProducts.find(p => p.name === "UNI-TREAT® Fire Side Chemicals") || chemicalProducts[7], division: "chemical" },
   
   
   // Mechanical Division

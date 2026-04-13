@@ -130,7 +130,7 @@ export const divisionSEO = {
     title:
       "Chemical Water Treatment Division | UNI-TREAT® Products | Unique Aqua",
     description:
-      "UNI-TREAT® Series of chemical water treatment solutions: Cooling Tower Chemicals, Boiler Water Treatment, Descaling Products, Speciality Chemicals, Fire Side System Chemicals, and Sugar Process Chemicals.",
+      "UNI-TREAT® Series of chemical water treatment solutions: Cooling Tower Chemicals, Boiler Water Treatment, Descaling Products, Speciality Chemicals, Fire Side Chemicals, and Sugar Process Chemicals.",
     keywords:
       "UNI-TREAT chemicals, cooling tower treatment chemicals, boiler water treatment, descaling chemicals, sugar process chemicals, fire side chemicals Nashik",
     canonical: "/products/chemical",
@@ -199,14 +199,14 @@ export const productCategorySEO = {
     ogImage: "/og-boiler.jpg",
   },
   "descaling-products": {
-    title: "Descaling Chemicals | UNI-TREAT® | Industrial Descaling Products",
+    title: "Descaling Chemicals | UNI-TREAT® | Industrial Descaling Chemicals",
     description:
       "UNI-TREAT® Descaling Chemicals: Liquid Compound (MS & Hard Scales), Powder Compound (Copper & SS), Alkaline Descaling Chemical, Silica Descalent. Remove hard scale from industrial equipment.",
     keywords:
       "descaling chemicals, industrial descaling, boiler descaling, heat exchanger cleaning, silica descalent, UNI-TREAT descaling, scale removal Nashik",
     canonical: "/products/chemical/descaling-products",
-    h1: "Industrial Descaling Products",
-    breadcrumb: "Descaling Products",
+    h1: "Industrial Descaling Chemicals",
+    breadcrumb: "Descaling Chemicals",
     ogImage: "/og-descaling.jpg",
   },
   "speciality-chemicals": {
@@ -222,13 +222,13 @@ export const productCategorySEO = {
     ogImage: "/og-speciality.jpg",
   },
   "fire-side-chemicals": {
-    title: "UNI-TREAT® Fire Side System Chemicals | Boiler Fireside Treatment",
+    title: "UNI-TREAT® Fire Side Chemicals | Boiler Fireside Treatment",
     description:
-      "UNI-TREAT® Fire Side System Chemicals: Multipurpose Solid Fuel Additive for Wood & Coal, Furnace Post Treatment Clear Compound. Improve boiler efficiency and reduce slagging.",
+      "UNI-TREAT® Fire Side Chemicals: Multipurpose Solid Fuel Additive for Wood & Coal, Furnace Post Treatment Clear Compound. Improve boiler efficiency and reduce slagging.",
     keywords:
       "fire side chemicals, boiler fireside treatment, solid fuel additive, furnace treatment, coal boiler chemical, UNI-TREAT fire side",
     canonical: "/products/chemical/fire-side-chemicals",
-    h1: "UNI-TREAT® Fire Side System Chemicals",
+    h1: "UNI-TREAT® Fire Side Chemicals",
     breadcrumb: "Fire Side Chemicals",
     ogImage: "/og-fireside.jpg",
   },

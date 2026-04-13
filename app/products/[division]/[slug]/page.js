@@ -636,7 +636,7 @@ export default async function ProductDetailPage({ params }) {
           src={product.headerImage}
           alt={product.name}
           fill
-          className="object-cover"
+          className="object-contain"
         />
       </div>
     )}
