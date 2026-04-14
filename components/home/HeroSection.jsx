@@ -414,9 +414,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { company_img, dm_plant, ro5000, ro500Chlorination, ro500SS, ro500Vertical, slide_1, slide_2, slide_4, slide_5, slide_6 } from "@/public";
 
 export default function HeroSection() {
+  const pathname = usePathname();
   const slides = [
     {
       title: "Company Overview",
@@ -537,6 +539,9 @@ export default function HeroSection() {
     return '';
   };
 
+  // Only show swipe indicator on homepage
+  const isHomePage = pathname === '/';
+
   return (
     <section 
       className="relative w-full min-h-screen overflow-y-auto overflow-x-hidden"
@@ -584,7 +589,7 @@ export default function HeroSection() {
               <div className="pt-14 sm:pt-16 md:pt-20 lg:pt-6" />
               
               <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
-                {/* Text Content Container - Mobile optimized with auto height */}
+                {/* Text Content Container */}
                 <div className="order-2 lg:order-1">
                   <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
                     {/* Subtitle Badge */}
@@ -606,7 +611,7 @@ export default function HeroSection() {
                       </p>
                     </motion.div>
 
-                    {/* Title - Responsive with proper wrapping */}
+                    {/* Title */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -627,7 +632,7 @@ export default function HeroSection() {
                       </h1>
                     </motion.div>
 
-                    {/* Description - With scrollable container if needed */}
+                    {/* Description */}
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
@@ -640,15 +645,13 @@ export default function HeroSection() {
                           fontSize: "clamp(13px, 3.5vw, 18px)",
                           maxWidth: "100%",
                           lineHeight: "1.5",
-                          maxHeight: isMobile ? "none" : "auto",
-                          overflowY: "auto",
                         }}
                       >
                         <p>{slides[current].description}</p>
                       </div>
                     </motion.div>
 
-                    {/* Buttons - Always visible with proper spacing */}
+                    {/* Buttons */}
                     <motion.div 
                       className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mt-auto"
                       initial={{ opacity: 0, y: 20 }}
@@ -687,12 +690,12 @@ export default function HeroSection() {
                       </Link>
                     </motion.div>
                     
-                    {/* Extra bottom padding for mobile to ensure scrolling space */}
+                    {/* Extra bottom padding for mobile */}
                     <div className="h-4 sm:h-6 md:h-8 lg:h-0" />
                   </div>
                 </div>
 
-                {/* Image Container - Mobile optimized */}
+                {/* Image Container */}
                 <motion.div
                   initial={{ x: 50, opacity: 0, scale: 0.95 }}
                   animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -700,10 +703,8 @@ export default function HeroSection() {
                   className="order-1 lg:order-2 mb-6 sm:mb-8 lg:mb-0"
                 >
                   <div className="relative w-full max-w-[260px] sm:max-w-[320px] md:max-w-[380px] lg:max-w-lg xl:max-w-xl mx-auto">
-                    {/* Glow effect background - Hidden on very small screens */}
                     <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500/20 to-blue-500/20 rounded-full blur-3xl -z-10 hidden sm:block" />
                     
-                    {/* Responsive image container */}
                     <div className="relative aspect-square w-full">
                       {typeof slides[current].image === 'string' ? (
                         <img
@@ -727,7 +728,6 @@ export default function HeroSection() {
                       )}
                     </div>
                     
-                    {/* Decorative glow effects - Hidden on mobile */}
                     <div 
                       className="absolute -bottom-4 -right-4 w-16 h-16 sm:w-20 sm:h-20 md:w-28 md:h-28 rounded-full blur-3xl opacity-40 hidden md:block"
                       style={{ background: colors.accent }}
@@ -744,7 +744,7 @@ export default function HeroSection() {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Arrows - Visible on tablet and up */}
+      {/* Navigation Arrows */}
       <button
         onClick={prevSlide}
         className="hidden md:flex fixed left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 backdrop-blur-md p-2 sm:p-2.5 md:p-3.5 rounded-full text-white transition-all duration-300 hover:scale-110 group z-30"
@@ -787,8 +787,8 @@ export default function HeroSection() {
         <ChevronRight size={18} className="sm:w-5 sm:h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-0.5" />
       </button>
 
-      {/* Dots Navigation - Mobile friendly */}
-      <div className="fixed bottom-3 sm:bottom-4 md:bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 md:gap-3 z-30">
+      {/* Dots Navigation */}
+      {/* <div className="fixed bottom-3 sm:bottom-4 md:bottom-6 lg:bottom-8 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2 md:gap-3 z-30">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -803,19 +803,21 @@ export default function HeroSection() {
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
-      </div>
+      </div> */}
 
-      {/* Swipe indicator for mobile - Only shows on touch devices */}
-      <div className="md:hidden fixed bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 animate-pulse pointer-events-none z-30">
-        <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center bg-black/20 backdrop-blur-sm">
-          <ChevronLeft size={14} className="text-white/70" />
-          <ChevronRight size={14} className="text-white/70 -ml-0.5" />
+      {/* Swipe indicator - ONLY on homepage and mobile */}
+      {/* {isHomePage && isMobile && (
+        <div className="fixed bottom-16 sm:bottom-20 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 opacity-60 animate-pulse pointer-events-none z-30">
+          <div className="w-8 h-8 rounded-full border border-white/30 flex items-center justify-center bg-black/20 backdrop-blur-sm">
+            <ChevronLeft size={14} className="text-white/70" />
+            <ChevronRight size={14} className="text-white/70 -ml-0.5" />
+          </div>
+          <span className="text-white/50 text-[10px] sm:text-xs">Swipe to navigate</span>
         </div>
-        <span className="text-white/50 text-[10px] sm:text-xs">Swipe to navigate</span>
-      </div>
+      )} */}
 
       {/* Bottom gradient fade */}
-      <div className="fixed bottom-0 left-0 right-0 h-12 sm:h-16 md:h-20 lg:h-24 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-20" />
+      {/* <div className="fixed bottom-0 left-0 right-0 h-12 sm:h-16 md:h-20 lg:h-24 bg-gradient-to-t from-black/20 to-transparent pointer-events-none z-20" /> */}
     </section>
   );
 }
