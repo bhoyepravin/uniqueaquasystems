@@ -618,14 +618,14 @@ export default async function ProductDetailPage({ params }) {
   <div className="flex flex-col md:flex-row">
     {/* Content Section - Left Side */}
     <div className="flex-1 p-8">
-      <div
+      {/* <div
         className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
         style={{ backgroundColor: (product.color || "#0077B6") + "20", color: product.color || "#0077B6" }}
       >
         {divisionLabels[division]}
-      </div>
+      </div> */}
       <h1 className="text-3xl font-bold text-gray-900 mb-2">{product.name}</h1>
-      {product.subtitle && <p className="text-gray-500 text-lg mb-4">{product.subtitle}</p>}
+      {/* {product.subtitle && <p className="text-gray-500 text-lg mb-4">{product.subtitle}</p>} */}
       <p className="text-gray-700 leading-relaxed">{product.description}</p>
     </div>
     
@@ -923,7 +923,15 @@ export default async function ProductDetailPage({ params }) {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <Phone size={14} className="text-[#0077B6]" />
+                  <span>+91 9322142163</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <Phone size={14} className="text-[#0077B6]" />
                   <span>+91-253-6699936</span>
+                </div>
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <Mail size={14} className="text-[#0077B6]" />
+                  <span>info@uniqueaquasystems.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm text-gray-600">
                   <Mail size={14} className="text-[#0077B6]" />

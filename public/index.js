@@ -63,3 +63,18 @@ import pharmaceutial_industry from "@/public/applicationarea/pharmaceutical_Indu
 import food_industry from "@/public/applicationarea/food_industry.jpg";
 
 export { paper_industry, automative_industry, sugar_industry, construction_industry, pharmaceutial_industry, food_industry };
+
+import certificate_01 from "@/public/logo/crisil_rating_certificate_th.png"
+import certificate_02 from "@/public/logo/indian_water_workers_association.jpg"
+import certificate_03 from "@/public/logo/standard_certi_council.png"
+
+export { certificate_01, certificate_02, certificate_03}
+
+import agri_expo_2008 from "@/public/newsevents/agri_expo_2008.jpeg"
+import aima_index_2018 from "@/public/newsevents/aima_index_2018.jpeg"
+import aima_index_2022 from "@/public/newsevents/aima_index_2022.jpeg"
+import nima_index_2015 from "@/public/newsevents/nima_index_2015.jpeg"
+import nima_token_of_gratitude from "@/public/newsevents/nima_token_of_gratitude.jpeg"
+import ishrae_nashik_sub_chapter from "@/public/newsevents/ishrae_nashik_sub_chapter.jpeg"
+
+export { agri_expo_2008, aima_index_2018, aima_index_2022, nima_index_2015, nima_token_of_gratitude,ishrae_nashik_sub_chapter}

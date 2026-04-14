@@ -112,6 +112,10 @@ export default function Footer() {
               <a href={`tel:${companyInfo.phone2}`} className="flex items-center gap-3 hover:text-white transition-colors text-sm">
                 <Phone size={16} className="text-[#90E0EF]" /> {companyInfo.phone2}
               </a>
+              <a href={`mailto:${companyInfo.email2}`} className="flex items-center gap-3 hover:text-white transition-colors text-sm">
+                <Mail size={30} className="text-[#90E0EF]" />
+                {companyInfo.email2} 
+              </a>
               <a href={`mailto:${companyInfo.email}`} className="flex items-center gap-3 hover:text-white transition-colors text-sm">
                 <Mail size={16} className="text-[#90E0EF]" /> {companyInfo.email}
               </a>
@@ -122,6 +126,18 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-white/40">
           <div>© {new Date().getFullYear()} Unique Aqua Systems & Chemical Industries. All rights reserved.</div>
+          <div className="text-center md:text-left text-sm">
+  Designed and developed by{" "}
+  <a
+    href="https://richsol.com"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-[#90E0EF] hover:underline"
+  >
+    Rich System Solutions Pvt Ltd
+  </a>
+</div>
+           
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="hover:text-white transition-colors text-sm">Privacy Policy</Link>
             <Link href="/terms-conditions" className="hover:text-white transition-colors text-sm">Terms & Conditions</Link>

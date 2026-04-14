@@ -8,6 +8,19 @@
   --font-sans: var(--font-urbanist);
 }
 
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE & Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scroll-chain {
+  overscroll-behavior: contain;
+}
+
 /* @theme {
   
   --font-title: var(--font-dm-serif);
