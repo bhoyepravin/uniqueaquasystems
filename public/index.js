@@ -10,7 +10,7 @@ import dm_plant from "../public/herosection/dm_plant.jpg";
 
 import cooling_tower from "../public/products/cooling_tower1.png";
 import scale_products from "../public/products/scale.png";
-import corrosion_products from "../public/products/corrosion1.jpg";
+import corrosion_products from "../public/products/corrosion1.webp";
 import fouling_products from "../public/products/fouling1.png";
 import microbiological_contaminants from "../public/products/microbiological1.jpg";
 import chiller from "../public/products/chiller1.jpg";
